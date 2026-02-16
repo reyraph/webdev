@@ -60,3 +60,532 @@ form input.error {
     margin-top: 5px;
     font-weight: bold;
 }
+
+/* ============================================================
+   FLEXBOX DEMO STYLES
+   Used by: sample of flexbox.html
+   ============================================================ */
+
+/* ── Page-level structure ─────────────────────────────────── */
+.page-header {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.page-header h1 {
+    margin: 0 0 0.4rem;
+    font-size: 2rem;
+}
+
+.page-header p {
+    margin: 0;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.page-main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem 3rem;
+    font-family: Arial, sans-serif;
+}
+
+.page-footer {
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    padding: 1.2rem 1rem;
+    font-size: 0.85rem;
+    color: #666;
+    font-family: Arial, sans-serif;
+}
+
+.page-footer a {
+    color: #4caf50;
+}
+
+/* ── Demo section wrapper ─────────────────────────────────── */
+.demo-section {
+    margin: 3rem 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.demo-label {
+    background-color: #f9fbe7;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 1rem 1.5rem;
+}
+
+.demo-label h2 {
+    margin: 0 0 0.4rem;
+    font-size: 1.2rem;
+    color: #2e7d32;
+}
+
+.demo-label p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.demo-label code {
+    background-color: #e8f5e9;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.85rem;
+    color: #1b5e20;
+}
+
+.demo-section__note {
+    margin: 1rem 1.5rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.demo-section__note--secondary {
+    color: #888;
+    font-style: italic;
+}
+
+.demo-section__note code {
+    background-color: #f0f0f0;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 0.85rem;
+}
+
+/* ── Demo 1 – Navigation bar ──────────────────────────────── */
+/* Demonstrates: display:flex, justify-content:space-between, align-items:center */
+.flex-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #263238;
+    padding: 0.8rem 1.5rem;
+}
+
+.flex-nav__logo {
+    color: #4caf50;
+    font-weight: bold;
+    font-size: 1.1rem;
+    font-family: Arial, sans-serif;
+}
+
+.flex-nav__links {
+    display: flex;           /* nested flex container for the link list */
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.flex-nav__link {
+    color: #eceff1;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-family: Arial, sans-serif;
+    transition: color 0.2s;
+}
+
+.flex-nav__link:hover {
+    color: #4caf50;
+}
+
+/* ── Demo 2 – Centered hero banner ───────────────────────── */
+/* Demonstrates: display:flex, justify-content:center, align-items:center, flex-direction:column */
+.flex-hero {
+    display: flex;
+    justify-content: center;   /* centres child on the main axis (horizontal) */
+    align-items: center;       /* centres child on the cross axis (vertical)  */
+    min-height: 320px;
+    background-image: url("https://picsum.photos/seed/landscape/1100/400");
+    background-size: cover;
+    background-position: center;
+}
+
+.flex-hero__content {
+    display: flex;
+    flex-direction: column;    /* stacks h3, p, and button vertically */
+    align-items: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    padding: 2rem 2.5rem;
+    border-radius: 8px;
+    max-width: 480px;
+    gap: 1rem;
+}
+
+.flex-hero__content h3 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.flex-hero__content p {
+    margin: 0;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.flex-hero__btn {
+    display: inline-block;
+    padding: 0.6rem 1.4rem;
+    background-color: #4caf50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.flex-hero__btn:hover {
+    background-color: #388e3c;
+}
+
+/* ── Demo 3 – Card gallery ────────────────────────────────── */
+/* Demonstrates: flex-wrap:wrap, flex-basis, gap, justify-content:center */
+.flex-gallery {
+    display: flex;
+    flex-wrap: wrap;           /* items wrap onto new rows when needed */
+    justify-content: center;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    list-style: none;
+    margin: 0;
+}
+
+.flex-card {
+    flex: 0 1 280px;           /* cannot grow, can shrink, ideal width = 280px */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    background-color: #fff;
+}
+
+.flex-card__img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;         /* crops the image to fill without distortion */
+    display: block;
+}
+
+.flex-card__body {
+    padding: 1rem;
+}
+
+.flex-card__title {
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+    color: #2e7d32;
+}
+
+.flex-card__text {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.flex-card__text code {
+    background-color: #f0f0f0;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+}
+
+/* ── Demo 4 – Grow & shrink visualiser ───────────────────── */
+/* Demonstrates: flex-grow, flex-shrink, flex-basis */
+.flex-grow-demo {
+    display: flex;
+    gap: 0.5rem;
+    height: 90px;
+    padding: 1rem 1.5rem;
+    align-items: stretch;
+}
+
+.flex-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 0.85rem;
+    text-align: center;
+    padding: 0.5rem;
+    flex-basis: 0;             /* all boxes start at 0 width; growth allocates remaining space */
+}
+
+.flex-box--1 {
+    flex-grow: 1;
+    background-color: #66bb6a; /* light green */
+}
+
+.flex-box--2 {
+    flex-grow: 2;
+    background-color: #388e3c; /* medium green */
+}
+
+.flex-box--3 {
+    flex-grow: 3;
+    background-color: #1b5e20; /* dark green */
+}
+
+/* ── Demo 5 – Sidebar + content layout ───────────────────── */
+/* Demonstrates: flex shorthand (grow/shrink/basis), flex-direction:row, order */
+.flex-layout {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+}
+
+.flex-layout__sidebar {
+    flex: 0 0 220px;           /* do NOT grow, do NOT shrink, always 220px wide */
+    background-color: #e8f5e9;
+    padding: 1.25rem;
+    border-right: 1px solid #c8e6c9;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.flex-layout__sidebar h3 {
+    margin: 0 0 0.5rem;
+    color: #2e7d32;
+    font-size: 1rem;
+}
+
+.flex-layout__sidebar code {
+    background-color: #c8e6c9;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    color: #1b5e20;
+}
+
+.flex-layout__nav {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+}
+
+.flex-layout__nav li {
+    margin-bottom: 0.5rem;
+}
+
+.flex-layout__nav a {
+    color: #388e3c;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.flex-layout__nav a:hover {
+    text-decoration: underline;
+}
+
+.flex-layout__content {
+    flex: 1;                   /* grows to fill all remaining space */
+    padding: 1.25rem 1.5rem;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.flex-layout__content h3 {
+    margin: 0 0 0.5rem;
+    color: #2e7d32;
+}
+
+.flex-layout__content code {
+    background-color: #f0f0f0;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+}
+
+.flex-layout__img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin: 1rem 0 0.5rem;
+    display: block;
+}
+
+.flex-layout__caption {
+    font-size: 0.82rem;
+    color: #888;
+    font-style: italic;
+    margin: 0.3rem 0 0;
+}
+
+.flex-layout__caption code {
+    background-color: #f0f0f0;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-size: 0.78rem;
+}
+
+/* ── Demo 6 – Mobile-first responsive layout ─────────────── */
+/* Demonstrates: flex-direction toggled by @media breakpoints  */
+
+/* Live breakpoint indicator */
+.responsive-indicator {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    padding: 0.75rem 1.5rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.responsive-badge {
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    opacity: 0.25;              /* dimmed when breakpoint is not active */
+    transition: opacity 0.25s;
+}
+
+/* Mobile badge is active by default (< 600px) */
+.responsive-badge--mobile  { background-color: #e3f2fd; color: #1565c0; opacity: 1; }
+.responsive-badge--tablet  { background-color: #fff3e0; color: #e65100; }
+.responsive-badge--desktop { background-color: #f3e5f5; color: #6a1b9a; }
+
+/* At 600px+: tablet badge lights up, mobile dims */
+@media (min-width: 600px) {
+    .responsive-badge--mobile  { opacity: 0.25; }
+    .responsive-badge--tablet  { opacity: 1; }
+}
+
+/* At 900px+: desktop badge lights up, tablet dims */
+@media (min-width: 900px) {
+    .responsive-badge--tablet  { opacity: 0.25; }
+    .responsive-badge--desktop { opacity: 1; }
+}
+
+/* Cards container – stacks all cards vertically on mobile */
+.responsive-cards {
+    display: flex;
+    flex-direction: column;     /* mobile default: one card per row */
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+/* Individual product card – mobile: image on top, text below */
+.resp-card {
+    display: flex;
+    flex-direction: column;     /* image stacked above text on mobile */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
+    background-color: #fff;
+}
+
+.resp-card__img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.resp-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem 1.2rem;
+}
+
+.resp-card__title {
+    margin: 0;
+    font-size: 1.05rem;
+    color: #2e7d32;
+}
+
+.resp-card__text {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+.resp-card__text code {
+    background-color: #f0f0f0;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+}
+
+.resp-card__tag {
+    display: inline-block;
+    align-self: flex-start;
+    background-color: #e8f5e9;
+    color: #1b5e20;
+    font-size: 0.75rem;
+    font-family: monospace;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+/* ── 600px+ : card becomes a horizontal row (image | text) ── */
+@media (min-width: 600px) {
+    .resp-card {
+        flex-direction: row;    /* image moves to the left of the text */
+    }
+
+    .resp-card__img {
+        flex: 0 0 200px;        /* fixed 200px image column, no grow/shrink */
+        width: 200px;
+        height: auto;
+    }
+}
+
+/* ── 900px+ : container becomes a row, cards sit side-by-side ── */
+@media (min-width: 900px) {
+    .responsive-cards {
+        flex-direction: row;    /* cards themselves become a horizontal row */
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+
+    .resp-card {
+        flex: 1 1 260px;        /* each card grows/shrinks from a 260px base */
+        flex-direction: column; /* back to column layout inside each card */
+    }
+
+    .resp-card__img {
+        flex: unset;
+        width: 100%;
+        height: 160px;
+    }
+}
+
+/* ── Responsive fixes for existing demos ─────────────────── */
+
+/* Demo 1 – Nav bar: stack logo + links vertically on small screens */
+@media (max-width: 540px) {
+    .flex-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+}
+
+/* Demo 5 – Sidebar layout: stack sidebar above content on mobile */
+@media (max-width: 640px) {
+    .flex-layout {
+        flex-direction: column; /* sidebar moves above the content area */
+    }
+
+    .flex-layout__sidebar {
+        flex: unset;            /* release the fixed 220px width */
+        border-right: none;
+        border-bottom: 1px solid #c8e6c9;
+    }
+}

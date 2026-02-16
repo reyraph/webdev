@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Flexbox – Sample Implementations</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- ====================================================
+         Page header
+    ===================================================== -->
+    <header class="page-header">
+        <h1>CSS Flexbox</h1>
+        <p>Six hands-on demos to master the Flexible Box Layout module</p>
+    </header>
+
+    <!-- ====================================================
+         Demo 1 – Horizontal navigation bar
+         Key properties: display:flex, justify-content, align-items
+    ===================================================== -->
+    <nav class="flex-nav" aria-label="Demo 1 – Navigation bar">
+        <span class="flex-nav__logo">🎨 FlexCourse</span>
+        <ul class="flex-nav__links" role="list">
+            <li><a class="flex-nav__link" href="#demo-hero">Hero</a></li>
+            <li><a class="flex-nav__link" href="#demo-gallery">Gallery</a></li>
+            <li><a class="flex-nav__link" href="#demo-grow">Grow</a></li>
+            <li><a class="flex-nav__link" href="#demo-layout">Layout</a></li>
+            <li><a class="flex-nav__link" href="#demo-responsive">Responsive</a></li>
+        </ul>
+    </nav>
+
+    <main class="page-main">
+
+        <!-- Demo label shared style – explains the concept -->
+        <!-- Each <section> carries a .demo-label explaining the CSS used -->
+
+        <!-- ================================================
+             Demo 2 – Centered hero banner
+             Key properties: justify-content:center, align-items:center
+        ================================================= -->
+        <section id="demo-hero" class="demo-section">
+            <div class="demo-label">
+                <h2>Demo 2 — Centered Hero</h2>
+                <p>
+                    <code>display: flex</code> &nbsp;|&nbsp;
+                    <code>justify-content: center</code> &nbsp;|&nbsp;
+                    <code>align-items: center</code> &nbsp;|&nbsp;
+                    <code>flex-direction: column</code>
+                </p>
+            </div>
+            <div class="flex-hero">
+                <div class="flex-hero__content">
+                    <h3>Welcome to Flexbox</h3>
+                    <p>Both axes, perfectly aligned — with just three properties.</p>
+                    <a class="flex-hero__btn" href="#demo-gallery">Explore the demos ↓</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================================================
+             Demo 3 – Card gallery with flex-wrap
+             Key properties: flex-wrap, flex-basis, gap
+        ================================================= -->
+        <section id="demo-gallery" class="demo-section">
+            <div class="demo-label">
+                <h2>Demo 3 — Card Gallery</h2>
+                <p>
+                    <code>flex-wrap: wrap</code> &nbsp;|&nbsp;
+                    <code>flex-basis: 280px</code> &nbsp;|&nbsp;
+                    <code>gap</code> &nbsp;|&nbsp;
+                    <code>justify-content: center</code>
+                </p>
+            </div>
+            <ul class="flex-gallery" role="list">
+                <li class="flex-card">
+                    <img
+                        class="flex-card__img"
+                        src="https://picsum.photos/seed/mountain/560/360"
+                        alt="Mountain landscape"
+                        loading="lazy"
+                    >
+                    <div class="flex-card__body">
+                        <h3 class="flex-card__title">Mountains</h3>
+                        <p class="flex-card__text">Cards share equal widths via <code>flex-basis</code> and wrap naturally onto the next row.</p>
+                    </div>
+                </li>
+                <li class="flex-card">
+                    <img
+                        class="flex-card__img"
+                        src="https://picsum.photos/seed/forest/560/360"
+                        alt="Forest path"
+                        loading="lazy"
+                    >
+                    <div class="flex-card__body">
+                        <h3 class="flex-card__title">Forest</h3>
+                        <p class="flex-card__text">Resize the window to see <code>flex-wrap: wrap</code> in action.</p>
+                    </div>
+                </li>
+                <li class="flex-card">
+                    <img
+                        class="flex-card__img"
+                        src="https://picsum.photos/seed/ocean/560/360"
+                        alt="Ocean waves"
+                        loading="lazy"
+                    >
+                    <div class="flex-card__body">
+                        <h3 class="flex-card__title">Ocean</h3>
+                        <p class="flex-card__text">Each card uses <code>flex: 0 1 280px</code> — it can shrink but not grow beyond its basis.</p>
+                    </div>
+                </li>
+                <li class="flex-card">
+                    <img
+                        class="flex-card__img"
+                        src="https://picsum.photos/seed/city/560/360"
+                        alt="City skyline"
+                        loading="lazy"
+                    >
+                    <div class="flex-card__body">
+                        <h3 class="flex-card__title">City</h3>
+                        <p class="flex-card__text">The <code>gap</code> property replaces old margin hacks between flex items.</p>
+                    </div>
+                </li>
+                <li class="flex-card">
+                    <img
+                        class="flex-card__img"
+                        src="https://picsum.photos/seed/desert/560/360"
+                        alt="Desert dunes"
+                        loading="lazy"
+                    >
+                    <div class="flex-card__body">
+                        <h3 class="flex-card__title">Desert</h3>
+                        <p class="flex-card__text"><code>object-fit: cover</code> ensures images always fill their container without distortion.</p>
+                    </div>
+                </li>
+                <li class="flex-card">
+                    <img
+                        class="flex-card__img"
+                        src="https://picsum.photos/seed/aurora/560/360"
+                        alt="Aurora borealis"
+                        loading="lazy"
+                    >
+                    <div class="flex-card__body">
+                        <h3 class="flex-card__title">Aurora</h3>
+                        <p class="flex-card__text"><code>justify-content: center</code> on the container centres the last incomplete row.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- ================================================
+             Demo 4 – flex-grow / flex-shrink visualiser
+             Key properties: flex-grow, flex-shrink, flex-basis
+        ================================================= -->
+        <section id="demo-grow" class="demo-section">
+            <div class="demo-label">
+                <h2>Demo 4 — Grow &amp; Shrink Visualiser</h2>
+                <p>
+                    <code>flex-grow</code> &nbsp;|&nbsp;
+                    <code>flex-shrink</code> &nbsp;|&nbsp;
+                    <code>flex-basis: 0</code>
+                </p>
+            </div>
+            <p class="demo-section__note">
+                All three boxes start with <code>flex-basis: 0</code>. The remaining space is then
+                distributed proportionally according to each item's <code>flex-grow</code> value.
+            </p>
+            <div class="flex-grow-demo">
+                <div class="flex-box flex-box--1">
+                    <span>flex-grow: 1</span>
+                </div>
+                <div class="flex-box flex-box--2">
+                    <span>flex-grow: 2</span>
+                </div>
+                <div class="flex-box flex-box--3">
+                    <span>flex-grow: 3</span>
+                </div>
+            </div>
+            <p class="demo-section__note demo-section__note--secondary">
+                Box 3 receives 3× the space of Box 1 because its <code>flex-grow</code> ratio is 3:1.
+                Try changing the values in DevTools to experiment!
+            </p>
+        </section>
+
+        <!-- ================================================
+             Demo 5 – Sidebar + main content layout
+             Key properties: flex shorthand, flex-direction, order
+        ================================================= -->
+        <section id="demo-layout" class="demo-section">
+            <div class="demo-label">
+                <h2>Demo 5 — Sidebar + Content Layout</h2>
+                <p>
+                    <code>flex: 0 0 220px</code> (sidebar) &nbsp;|&nbsp;
+                    <code>flex: 1</code> (content) &nbsp;|&nbsp;
+                    <code>order</code>
+                </p>
+            </div>
+            <div class="flex-layout">
+                <aside class="flex-layout__sidebar">
+                    <h3>Sidebar</h3>
+                    <p><code>flex: 0 0 220px</code></p>
+                    <p>This aside will <strong>never grow or shrink</strong> — it is locked at 220 px wide.</p>
+                    <nav aria-label="Sidebar navigation">
+                        <ul class="flex-layout__nav" role="list">
+                            <li><a href="#demo-hero">Hero demo</a></li>
+                            <li><a href="#demo-gallery">Gallery demo</a></li>
+                            <li><a href="#demo-grow">Grow demo</a></li>
+                        </ul>
+                    </nav>
+                </aside>
+                <article class="flex-layout__content">
+                    <h3>Main content area</h3>
+                    <p><code>flex: 1</code> — this section absorbs all remaining horizontal space.</p>
+                    <p>
+                        The <code>flex</code> shorthand bundles three values:
+                        <code>flex-grow</code>, <code>flex-shrink</code>, and <code>flex-basis</code>.
+                        Writing <code>flex: 1</code> is equivalent to <code>flex: 1 1 0%</code>.
+                    </p>
+                    <img
+                        class="flex-layout__img"
+                        src="https://picsum.photos/seed/workspace/900/400"
+                        alt="A calm workspace with laptop and notebook"
+                        loading="lazy"
+                    >
+                    <p class="flex-layout__caption">
+                        Tip: swap the sidebar and content using <code>order: -1</code> on the sidebar —
+                        no HTML changes needed!
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <!-- ================================================
+             Demo 6 – Mobile-first responsive layout
+             Key properties: flex-direction change via @media,
+             flex: 0 0 <size> for fixed image column
+        ================================================= -->
+        <section id="demo-responsive" class="demo-section">
+            <div class="demo-label">
+                <h2>Demo 6 — Mobile-First Responsive Layout</h2>
+                <p>
+                    <code>flex-direction: column</code> (mobile default)
+                    &nbsp;→&nbsp;
+                    <code>flex-direction: row</code> at
+                    <code>@media (min-width: 600px)</code>
+                    &nbsp;→&nbsp;
+                    side-by-side cards at
+                    <code>@media (min-width: 900px)</code>
+                </p>
+            </div>
+
+            <!-- Live breakpoint indicator – the active badge lights up -->
+            <div class="responsive-indicator" aria-label="Current breakpoint">
+                <span class="responsive-badge responsive-badge--mobile">📱 Mobile (&lt; 600 px)</span>
+                <span class="responsive-badge responsive-badge--tablet">📟 Tablet (600 – 900 px)</span>
+                <span class="responsive-badge responsive-badge--desktop">🖥 Desktop (&gt; 900 px)</span>
+            </div>
+
+            <p class="demo-section__note">
+                Resize the browser window to see each card change its internal
+                <code>flex-direction</code> at two breakpoints.
+                No JavaScript — just CSS <code>@media</code> queries.
+            </p>
+
+            <!-- Three product cards that adapt their flex-direction -->
+            <div class="responsive-cards">
+
+                <article class="resp-card">
+                    <img
+                        class="resp-card__img"
+                        src="https://picsum.photos/seed/camera/600/400"
+                        alt="A vintage camera on a wooden table"
+                        loading="lazy"
+                    >
+                    <div class="resp-card__body">
+                        <h3 class="resp-card__title">Camera Kit</h3>
+                        <p class="resp-card__text">
+                            On mobile the image sits <strong>above</strong> the text
+                            (<code>flex-direction: column</code>). At 600 px+ the image
+                            moves <strong>beside</strong> the text (<code>flex-direction: row</code>).
+                        </p>
+                        <span class="resp-card__tag">column → row</span>
+                    </div>
+                </article>
+
+                <article class="resp-card">
+                    <img
+                        class="resp-card__img"
+                        src="https://picsum.photos/seed/headphones/600/400"
+                        alt="Headphones on a desk"
+                        loading="lazy"
+                    >
+                    <div class="resp-card__body">
+                        <h3 class="resp-card__title">Headphones</h3>
+                        <p class="resp-card__text">
+                            The image column is locked to 200 px with
+                            <code>flex: 0 0 200px</code> — it will never grow or shrink.
+                            The text area takes the rest with <code>flex: 1</code>.
+                        </p>
+                        <span class="resp-card__tag">@media (min-width: 600px)</span>
+                    </div>
+                </article>
+
+                <article class="resp-card">
+                    <img
+                        class="resp-card__img"
+                        src="https://picsum.photos/seed/laptop/600/400"
+                        alt="Laptop open on a clean desk"
+                        loading="lazy"
+                    >
+                    <div class="resp-card__body">
+                        <h3 class="resp-card__title">Laptop</h3>
+                        <p class="resp-card__text">
+                            At 900 px+ the three cards themselves become a flex row
+                            (<code>flex-direction: row</code> on the container),
+                            and each card switches back to <code>column</code> internally.
+                        </p>
+                        <span class="resp-card__tag">@media (min-width: 900px)</span>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ====================================================
+         Page footer
+    ===================================================== -->
+    <footer class="page-footer">
+        <p>
+            CSS Flexbox Demo &mdash; HES-SO Valais Web Development Course &mdash; Images via
+            <a href="https://picsum.photos" target="_blank" rel="noopener">picsum.photos</a>
+        </p>
+    </footer>
+
+</body>
+</html>
