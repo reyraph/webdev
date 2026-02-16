@@ -8,7 +8,8 @@
 
 ## Project Context
 - **Course**: Web Development (2nd year Bachelor)
-- **Main Project**: Interactive game using React and JavaScript
+- **First Main Project**: Interactive game using JavaScript
+- **Second Main Project**: Descriptive Website using React
 - **Philosophy**: Security-by-design, Privacy-by-design, Educational by nature
 
 ---
