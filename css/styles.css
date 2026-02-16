@@ -589,3 +589,112 @@ form input.error {
         border-bottom: 1px solid #c8e6c9;
     }
 }
+
+/* ── Demo 7 – Image cropping ──────────────────────────────── */
+/* Demonstrates: object-fit values and object-position anchors */
+
+/* Sub-section wrapper (used for both A and B) */
+.crop-subsection {
+    padding: 1.25rem 1.5rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.crop-subsection__title {
+    margin: 0 0 0.4rem;
+    font-size: 1rem;
+    color: #2e7d32;
+}
+
+.crop-subsection__title code {
+    background-color: #e8f5e9;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    color: #1b5e20;
+}
+
+.crop-subsection__desc {
+    margin: 0 0 1rem;
+    font-size: 0.88rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Flex grid shared by both sub-sections */
+.crop-grid {
+    display: flex;
+    flex-wrap: wrap;            /* cards wrap to the next row when needed */
+    gap: 1.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Individual item: image frame on top, caption below */
+.crop-item {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 260px;            /* ideal width 260px, can shrink, never grows */
+    gap: 0.6rem;
+}
+
+/* Fixed-size image container – the key to demonstrating cropping */
+.crop-frame {
+    width: 260px;
+    height: 180px;
+    overflow: hidden;           /* hides any image overflow */
+    border: 2px solid #c8e6c9;
+    border-radius: 6px;
+    background-color: #fff;
+    flex-shrink: 0;
+}
+
+/* Gray background on frames that may show letterbox gaps */
+.crop-frame--letterbox {
+    background-color: #e0e0e0;
+}
+
+/* Base image style – fills the frame; object-fit set per modifier */
+.crop-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* ── object-fit modifiers ──────────────────────────── */
+.crop-img--fill       { object-fit: fill; }
+.crop-img--contain    { object-fit: contain; }
+.crop-img--cover      { object-fit: cover; }
+.crop-img--none       { object-fit: none; }
+.crop-img--scale-down { object-fit: scale-down; }
+
+/* ── object-position modifiers (all used with object-fit: cover) ── */
+.crop-pos--top-left     { object-position: top left; }
+.crop-pos--top          { object-position: top center; }
+.crop-pos--center       { object-position: center; }       /* browser default */
+.crop-pos--bottom       { object-position: bottom center; }
+.crop-pos--bottom-right { object-position: bottom right; }
+.crop-pos--custom       { object-position: 25% 75%; }
+
+/* Caption below each image frame */
+.crop-caption {
+    font-size: 0.85rem;
+    color: #555;
+    line-height: 1.4;
+}
+
+.crop-caption code {
+    display: inline-block;
+    background-color: #e8f5e9;
+    color: #1b5e20;
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
+}
+
+.crop-caption p {
+    margin: 0;
+    font-size: 0.82rem;
+    color: #666;
+}

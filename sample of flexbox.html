@@ -13,7 +13,7 @@
     ===================================================== -->
     <header class="page-header">
         <h1>CSS Flexbox</h1>
-        <p>Six hands-on demos to master the Flexible Box Layout module</p>
+        <p>Seven hands-on demos to master the Flexible Box Layout module</p>
     </header>
 
     <!-- ====================================================
@@ -28,6 +28,7 @@
             <li><a class="flex-nav__link" href="#demo-grow">Grow</a></li>
             <li><a class="flex-nav__link" href="#demo-layout">Layout</a></li>
             <li><a class="flex-nav__link" href="#demo-responsive">Responsive</a></li>
+            <li><a class="flex-nav__link" href="#demo-cropping">Cropping</a></li>
         </ul>
     </nav>
 
@@ -321,6 +322,215 @@
                 </article>
 
             </div>
+        </section>
+
+        <!-- ================================================
+             Demo 7 – Image cropping: object-fit & object-position
+             Key properties: object-fit (fill/contain/cover/none/scale-down),
+             object-position (keyword and percentage anchors)
+        ================================================= -->
+        <section id="demo-cropping" class="demo-section">
+            <div class="demo-label">
+                <h2>Demo 7 — Image Cropping</h2>
+                <p>
+                    <code>object-fit</code> &nbsp;|&nbsp;
+                    <code>object-position</code> &nbsp;|&nbsp;
+                    <code>overflow: hidden</code> on the container
+                </p>
+            </div>
+
+            <!-- ── Sub-section A: object-fit ─────────────────── -->
+            <div class="crop-subsection">
+                <h3 class="crop-subsection__title">A — <code>object-fit</code> values</h3>
+                <p class="crop-subsection__desc">
+                    All five boxes are the same size (<strong>260 × 180 px</strong>) and
+                    use the same image. Only <code>object-fit</code> changes.
+                </p>
+
+                <ul class="crop-grid" role="list">
+
+                    <li class="crop-item">
+                        <div class="crop-frame">
+                            <img
+                                class="crop-img crop-img--fill"
+                                src="https://picsum.photos/seed/flowers/520/360"
+                                alt="Flowers field"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="crop-caption">
+                            <code>object-fit: fill</code>
+                            <p>Stretches the image to fill the box exactly. Aspect ratio is <strong>not</strong> preserved — the image distorts.</p>
+                        </div>
+                    </li>
+
+                    <li class="crop-item">
+                        <div class="crop-frame crop-frame--letterbox">
+                            <img
+                                class="crop-img crop-img--contain"
+                                src="https://picsum.photos/seed/flowers/520/360"
+                                alt="Flowers field"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="crop-caption">
+                            <code>object-fit: contain</code>
+                            <p>Scales the image to fit entirely inside the box. No cropping, no distortion — letterbox bars appear if ratios differ.</p>
+                        </div>
+                    </li>
+
+                    <li class="crop-item">
+                        <div class="crop-frame">
+                            <img
+                                class="crop-img crop-img--cover"
+                                src="https://picsum.photos/seed/flowers/520/360"
+                                alt="Flowers field"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="crop-caption">
+                            <code>object-fit: cover</code>
+                            <p>Scales up until the box is fully covered, then <strong>crops</strong> the overflow. Most used for card thumbnails.</p>
+                        </div>
+                    </li>
+
+                    <li class="crop-item">
+                        <div class="crop-frame crop-frame--letterbox">
+                            <img
+                                class="crop-img crop-img--none"
+                                src="https://picsum.photos/seed/flowers/520/360"
+                                alt="Flowers field"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="crop-caption">
+                            <code>object-fit: none</code>
+                            <p>Renders the image at its <strong>natural size</strong>, ignoring the box dimensions. May overflow or leave gaps.</p>
+                        </div>
+                    </li>
+
+                    <li class="crop-item">
+                        <div class="crop-frame crop-frame--letterbox">
+                            <img
+                                class="crop-img crop-img--scale-down"
+                                src="https://picsum.photos/seed/flowers/520/360"
+                                alt="Flowers field"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="crop-caption">
+                            <code>object-fit: scale-down</code>
+                            <p>Picks whichever result is <strong>smaller</strong>: <code>none</code> or <code>contain</code>. Never enlarges beyond natural size.</p>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+            <!-- ── Sub-section B: object-position ────────────── -->
+            <div class="crop-subsection">
+                <h3 class="crop-subsection__title">B — <code>object-position</code> anchors</h3>
+                <p class="crop-subsection__desc">
+                    All six boxes use <code>object-fit: cover</code> on the same tall portrait image.
+                    Only the <strong>crop anchor</strong> (<code>object-position</code>) changes —
+                    controlling which part of the image stays visible.
+                </p>
+
+                <ul class="crop-grid" role="list">
+
+                    <li class="crop-item">
+                        <div class="crop-frame">
+                            <img
+                                class="crop-img crop-img--cover crop-pos--top-left"
+                                src="https://picsum.photos/seed/portrait/400/600"
+                                alt="Portrait photo for cropping demo"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="crop-caption">
+                            <code>object-position: top left</code>
+                            <p>Anchors the crop to the upper-left corner of the image.</p>
+                        </div>
+                    </li>
+
+                    <li class="crop-item">
+                        <div class="crop-frame">
+                            <img
+                                class="crop-img crop-img--cover crop-pos--top"
+                                src="https://picsum.photos/seed/portrait/400/600"
+                                alt="Portrait photo for cropping demo"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="crop-caption">
+                            <code>object-position: top center</code>
+                            <p>Shows the top strip of the image, centred horizontally. Useful for hero shots where the subject is at the top.</p>
+                        </div>
+                    </li>
+
+                    <li class="crop-item">
+                        <div class="crop-frame">
+                            <img
+                                class="crop-img crop-img--cover crop-pos--center"
+                                src="https://picsum.photos/seed/portrait/400/600"
+                                alt="Portrait photo for cropping demo"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="crop-caption">
+                            <code>object-position: center</code>
+                            <p>The <strong>browser default</strong>. The crop is taken from the exact centre of the image.</p>
+                        </div>
+                    </li>
+
+                    <li class="crop-item">
+                        <div class="crop-frame">
+                            <img
+                                class="crop-img crop-img--cover crop-pos--bottom"
+                                src="https://picsum.photos/seed/portrait/400/600"
+                                alt="Portrait photo for cropping demo"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="crop-caption">
+                            <code>object-position: bottom center</code>
+                            <p>Anchors the crop to the bottom strip. Good for images where the subject stands at the bottom.</p>
+                        </div>
+                    </li>
+
+                    <li class="crop-item">
+                        <div class="crop-frame">
+                            <img
+                                class="crop-img crop-img--cover crop-pos--bottom-right"
+                                src="https://picsum.photos/seed/portrait/400/600"
+                                alt="Portrait photo for cropping demo"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="crop-caption">
+                            <code>object-position: bottom right</code>
+                            <p>Anchors the crop to the lower-right corner of the image.</p>
+                        </div>
+                    </li>
+
+                    <li class="crop-item">
+                        <div class="crop-frame">
+                            <img
+                                class="crop-img crop-img--cover crop-pos--custom"
+                                src="https://picsum.photos/seed/portrait/400/600"
+                                alt="Portrait photo for cropping demo"
+                                loading="lazy"
+                            >
+                        </div>
+                        <div class="crop-caption">
+                            <code>object-position: 25% 75%</code>
+                            <p>Custom percentage values: <strong>25 %</strong> from the left edge and <strong>75 %</strong> from the top. Any unit (px, %, em) is valid.</p>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
         </section>
 
     </main>
