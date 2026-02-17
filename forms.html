@@ -576,8 +576,8 @@
             </div>
 
             <!-- This form uses native browser validation (no JS) -->
-            <form class="fm-validation-form" novalidate="false">
-                <div class="fm-grid">
+            <form class="fm-validation-form" method="get">
+                <div class="fm-grid fm-grid--2col">
                     <div class="fm-group">
                         <label class="fm-label" for="fm-v-required">
                             <code>required</code> — Cannot be empty
@@ -589,7 +589,8 @@
                         <label class="fm-label" for="fm-v-minmax-len">
                             <code>minlength="3" maxlength="10"</code> — Length constraints
                         </label>
-                        <input type="text" id="fm-v-minmax-len" class="fm-input" minlength="3" maxlength="10" placeholder="3 to 10 characters">
+                        <input type="text" id="fm-v-minmax-len" class="fm-input" required minlength="3" maxlength="10" placeholder="3 to 10 characters">
+                        <p class="fm-hint"><code>minlength</code> triggers validation on submit if the value is too short. <code>maxlength</code> physically blocks typing beyond the limit.</p>
                     </div>
 
                     <div class="fm-group">
@@ -601,17 +602,30 @@
 
                     <div class="fm-group">
                         <label class="fm-label" for="fm-v-pattern">
-                            <code>pattern="[A-Z]{2}[0-9]{3}"</code> — Regex (e.g., VS123)
+                            <code>pattern="[A-Z]{2}\s?[0-9]{1,6}"</code> — Swiss licence plate
                         </label>
-                        <input type="text" id="fm-v-pattern" class="fm-input" pattern="[A-Z]{2}[0-9]{3}" placeholder="VS123" title="Two uppercase letters followed by three digits">
+                        <input type="text" id="fm-v-pattern" class="fm-input" required pattern="[A-Z]{2}\s?[0-9]{1,6}" placeholder="VS 123456" title="Two uppercase letters (canton) followed by 1 to 6 digits (e.g., VS 123456)">
+                        <p class="fm-hint">Format: 2 uppercase letters (canton code) + optional space + 1 to 6 digits. Examples: <code>VS 123456</code>, <code>GE12</code>, <code>BE 1</code>.</p>
                     </div>
 
                     <div class="fm-group">
                         <label class="fm-label" for="fm-v-placeholder">
-                            <code>placeholder</code> + <code>autocomplete</code>
+                            <code>placeholder</code> + <code>autocomplete</code> + <code>list</code>
                         </label>
-                        <input type="text" id="fm-v-placeholder" class="fm-input" placeholder="Hint text shown when empty" autocomplete="given-name">
-                        <p class="fm-hint"><code>autocomplete</code> tells the browser what kind of data to suggest (e.g., <code>given-name</code>, <code>email</code>, <code>postal-code</code>).</p>
+                        <input type="text" id="fm-v-placeholder" class="fm-input" placeholder="Start typing a city..." autocomplete="address-level2" list="swiss-cities">
+                        <datalist id="swiss-cities">
+                            <option value="Sion"></option>
+                            <option value="Sierre"></option>
+                            <option value="Martigny"></option>
+                            <option value="Monthey"></option>
+                            <option value="Geneve"></option>
+                            <option value="Lausanne"></option>
+                            <option value="Bern"></option>
+                            <option value="Zurich"></option>
+                            <option value="Basel"></option>
+                            <option value="Luzern"></option>
+                        </datalist>
+                        <p class="fm-hint"><code>autocomplete</code> tells the browser what kind of data to suggest. The <code>list</code> attribute links to a <code>&lt;datalist&gt;</code> providing additional suggestions.</p>
                     </div>
 
                     <div class="fm-group">

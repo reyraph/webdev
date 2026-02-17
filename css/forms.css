@@ -330,3 +330,8 @@ form input.error {
 .fm-validation-form {
     margin: 0;
 }
+
+/* ── Two-column compact grid (validation section) ──────────── */
+.fm-grid--2col {
+    grid-template-columns: 1fr 1fr;
+}
