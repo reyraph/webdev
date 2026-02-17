@@ -1,0 +1,489 @@
+/* ============================================================
+   LAYOUT – Page structure, containers, grids
+   ============================================================ */
+
+/* ── Page-level structure ───────────────────────────────────── */
+.page-header {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+.page-main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem 3rem;
+}
+
+.page-footer {
+    background-color: var(--color-bg-light);
+    border-top: 1px solid var(--color-border-light);
+    padding: 1.2rem 1rem;
+    text-align: center;
+}
+
+/* ── Demo section wrapper ───────────────────────────────────── */
+.demo-section {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    margin: 3rem 0;
+    overflow: hidden;
+}
+
+.demo-label {
+    background-color: var(--color-primary-bg-alt);
+    border-bottom: 1px solid var(--color-border);
+    padding: 1rem 1.5rem;
+}
+
+/* ── Flex navigation (flexbox.html) ─────────────────────────── */
+.flex-nav {
+    align-items: center;
+    background-color: var(--color-dark);
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 1.5rem;
+}
+
+.flex-nav__links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* ── Grid navigation (grid.html, boxmodel.html, forms.html) ── */
+.grid-nav {
+    align-items: center;
+    background-color: var(--color-dark);
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 1.5rem;
+}
+
+.grid-nav__links {
+    display: flex;
+    gap: 1.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* ── Hub grid (index.html) ──────────────────────────────────── */
+.hub-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    padding: 2rem 0;
+}
+
+.hub-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.5rem;
+}
+
+/* ── Demo 2 – Centered hero banner ──────────────────────────── */
+.flex-hero {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 320px;
+}
+
+.flex-hero__content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 480px;
+    padding: 2rem 2.5rem;
+    text-align: center;
+}
+
+/* ── Demo 3 – Card gallery ──────────────────────────────────── */
+.flex-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 1.5rem;
+}
+
+.flex-card {
+    flex: 0 1 280px;
+    overflow: hidden;
+}
+
+.flex-card__body {
+    padding: 1rem;
+}
+
+/* ── Demo 4 – Grow & shrink visualiser ──────────────────────── */
+.flex-grow-demo {
+    align-items: stretch;
+    display: flex;
+    gap: 0.5rem;
+    height: 90px;
+    padding: 1rem 1.5rem;
+}
+
+/* ── Demo 5 – Sidebar + content layout ──────────────────────── */
+.flex-layout {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+}
+
+.flex-layout__sidebar {
+    flex: 0 0 220px;
+    padding: 1.25rem;
+}
+
+.flex-layout__nav {
+    list-style: none;
+    margin: 1rem 0 0;
+    padding: 0;
+}
+
+.flex-layout__nav li {
+    margin-bottom: 0.5rem;
+}
+
+.flex-layout__content {
+    flex: 1;
+    padding: 1.25rem 1.5rem;
+}
+
+/* ── Demo 6 – Responsive cards container ────────────────────── */
+.responsive-indicator {
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    padding: 0.75rem 1.5rem;
+}
+
+.responsive-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+.resp-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.resp-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem 1.2rem;
+}
+
+/* ── Demo 7 – Image cropping ────────────────────────────────── */
+.crop-subsection {
+    border-top: 1px solid var(--color-border);
+    padding: 1.25rem 1.5rem;
+}
+
+.crop-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.crop-item {
+    display: flex;
+    flex: 0 1 260px;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.crop-frame {
+    flex-shrink: 0;
+    height: 180px;
+    overflow: hidden;
+    width: 260px;
+}
+
+/* ── Crop controls (sliders) ────────────────────────────────── */
+.crop-controls {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 1rem 0 1.5rem;
+    padding: 1rem 1.5rem;
+}
+
+/* ── Grid demos (grid.html) ─────────────────────────────────── */
+
+/* Demo 1 – Basic columns & rows */
+.gd-basic {
+    display: grid;
+    gap: 0.75rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 80px);
+    padding: 1.5rem;
+}
+
+/* Demo 2 – Spanning mosaic */
+.gd-mosaic {
+    display: grid;
+    gap: 0.5rem;
+    grid-auto-rows: 160px;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 1.5rem;
+}
+
+.gd-mosaic__cell {
+    overflow: hidden;
+    position: relative;
+}
+
+.gd-mosaic__cell--span-col  { grid-column: span 2; }
+.gd-mosaic__cell--span-row  { grid-row: span 2; }
+.gd-mosaic__cell--span-both { grid-column: span 2; grid-row: span 2; }
+
+/* Demo 3 – Named template areas */
+.gd-page {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-areas:
+        "header  header  header"
+        "sidebar main    main  "
+        "footer  footer  footer";
+    grid-template-columns: 200px 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    min-height: 320px;
+    padding: 1rem 1.5rem 1.5rem;
+}
+
+.gd-page__header  { grid-area: header; }
+.gd-page__sidebar { grid-area: sidebar; }
+.gd-page__main    { grid-area: main; }
+.gd-page__footer  { grid-area: footer; }
+
+.gd-page__header,
+.gd-page__sidebar,
+.gd-page__main,
+.gd-page__footer {
+    border-radius: var(--radius-md);
+    padding: 1rem;
+}
+
+.gd-page__nav {
+    list-style: none;
+    margin: 0.5rem 0 0;
+    padding: 0;
+}
+
+.gd-page__nav li { margin-bottom: 0.4rem; }
+
+/* Demo 4 – auto-fit + minmax() */
+.gd-autofit {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    list-style: none;
+    margin: 0;
+    padding: 1.5rem;
+}
+
+.gd-autofit__card {
+    overflow: hidden;
+}
+
+.gd-autofit__body { padding: 0.9rem; }
+
+/* Demo 5 – auto-fill vs auto-fit comparison */
+.gd-compare {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+.gd-compare__panel {
+    flex: 1;
+    padding: 1rem;
+}
+
+.gd-fill-grid {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+}
+
+.gd-fit-grid {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+}
+
+/* Demo 6 – Dense auto-flow */
+.gd-dense-compare {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+.gd-flow-grid {
+    display: grid;
+    gap: 0.4rem;
+    grid-auto-rows: 60px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.gd-flow-grid--dense {
+    grid-auto-flow: dense;
+}
+
+/* Demo 7 – Alignment axes */
+.gd-align-showcase {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+.gd-align-box {
+    flex: 1 1 220px;
+    padding: 1rem;
+}
+
+.gd-align-grid {
+    border-radius: var(--radius-md);
+    display: grid;
+    gap: 0.4rem;
+    grid-auto-rows: 60px;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0.4rem;
+}
+
+.gd-align-grid--start   { align-items: start;   justify-items: start; }
+.gd-align-grid--center  { align-items: center;  justify-items: center; }
+.gd-align-grid--end     { align-items: end;     justify-items: end; }
+.gd-align-grid--stretch { align-items: stretch; justify-items: stretch; }
+
+/* ── Box model demos (boxmodel.html) ────────────────────────── */
+
+/* Section 1 – Static diagram */
+.bm-diagram-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+}
+
+.bm-diagram {
+    padding: 2rem;
+    position: relative;
+    text-align: center;
+}
+
+.bm-diagram__layer--border {
+    padding: 1.5rem;
+    position: relative;
+}
+
+.bm-diagram__layer--padding {
+    padding: 1.5rem;
+    position: relative;
+}
+
+.bm-diagram__layer--content {
+    min-width: 120px;
+    padding: 1.5rem 2rem;
+}
+
+/* Section 2 – Playground layout */
+.bm-playground {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+.bm-controls {
+    display: flex;
+    flex: 0 0 320px;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.bm-preview {
+    flex: 1;
+    min-width: 0;
+}
+
+.bm-preview__stage {
+    border-radius: var(--radius-lg);
+    min-height: 200px;
+    overflow: auto;
+    padding: 1.5rem;
+}
+
+.bm-margin-zone {
+    display: inline-block;
+}
+
+.bm-target {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* ── Section 3 – Position explorer ──────────────────────────── */
+.pos-playground {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+.pos-controls {
+    display: flex;
+    flex: 0 0 320px;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.pos-preview {
+    flex: 1;
+    min-width: 0;
+}
+
+.pos-container {
+    min-height: 350px;
+    padding: 1rem;
+    position: relative;
+}
+
+/* ── Form demo grid (forms.html) ────────────────────────────── */
+.fm-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 1.5rem;
+}
+
+.fm-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.fm-group--wide {
+    grid-column: 1 / -1;
+}

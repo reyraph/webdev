@@ -1,0 +1,451 @@
+/* ============================================================
+   COMPONENTS – Visual elements, cards, images, decorations
+   ============================================================ */
+
+/* ── Hub cards ──────────────────────────────────────────────── */
+.hub-card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    color: inherit;
+    text-decoration: none;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.hub-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-3px);
+}
+
+/* ── Hero banner ────────────────────────────────────────────── */
+.flex-hero {
+    background-image: url("https://picsum.photos/seed/landscape/1100/400");
+    background-position: center;
+    background-size: cover;
+}
+
+.flex-hero__content {
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: var(--radius-xl);
+    color: var(--color-white);
+}
+
+.flex-hero__btn {
+    background-color: var(--color-primary);
+    border-radius: var(--radius-md);
+    color: var(--color-white);
+    display: inline-block;
+    font-weight: bold;
+    padding: 0.6rem 1.4rem;
+    transition: background-color 0.2s;
+}
+
+.flex-hero__btn:hover {
+    background-color: var(--color-primary-dark);
+}
+
+/* ── Card gallery ───────────────────────────────────────────── */
+.flex-card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+}
+
+.flex-card__img {
+    display: block;
+    height: 180px;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* ── Grow & shrink boxes ────────────────────────────────────── */
+.flex-box {
+    align-items: center;
+    border-radius: var(--radius-lg);
+    color: var(--color-white);
+    display: flex;
+    flex-basis: 0;
+    font-size: 0.85rem;
+    font-weight: bold;
+    justify-content: center;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.flex-box--1 {
+    background-color: var(--color-primary-light);
+    flex-grow: 1;
+}
+
+.flex-box--2 {
+    background-color: var(--color-primary-dark);
+    flex-grow: 2;
+}
+
+.flex-box--3 {
+    background-color: var(--color-primary-darkest);
+    flex-grow: 3;
+}
+
+/* ── Sidebar layout visuals ─────────────────────────────────── */
+.flex-layout__sidebar {
+    background-color: var(--color-primary-bg);
+    border-right: 1px solid var(--color-primary-border);
+}
+
+.flex-layout__img {
+    border-radius: var(--radius-lg);
+    display: block;
+    height: 200px;
+    margin: 1rem 0 0.5rem;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* ── Responsive badges ──────────────────────────────────────── */
+.responsive-badge {
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    opacity: 0.25;
+    padding: 0.3rem 0.8rem;
+    transition: opacity 0.25s;
+}
+
+.responsive-badge--mobile  { background-color: var(--color-blue-bg); color: var(--color-blue); opacity: 1; }
+.responsive-badge--tablet  { background-color: var(--color-orange-bg); color: var(--color-orange-dark); }
+.responsive-badge--desktop { background-color: var(--color-purple-bg); color: var(--color-purple); }
+
+/* ── Responsive cards visuals ───────────────────────────────── */
+.resp-card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+}
+
+.resp-card__img {
+    display: block;
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.resp-card__tag {
+    align-self: flex-start;
+    background-color: var(--color-primary-bg);
+    border-radius: var(--radius-md);
+    color: var(--color-primary-darkest);
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    padding: 3px 8px;
+}
+
+/* ── Image cropping visuals ─────────────────────────────────── */
+.crop-frame {
+    background-color: var(--color-white);
+    border: 2px solid var(--color-primary-border);
+    border-radius: var(--radius-lg);
+}
+
+.crop-frame--letterbox {
+    background-color: var(--color-border);
+}
+
+.crop-img {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+/* object-fit modifiers */
+.crop-img--fill       { object-fit: fill; }
+.crop-img--contain    { object-fit: contain; }
+.crop-img--cover      { object-fit: cover; }
+.crop-img--none       { object-fit: none; }
+.crop-img--scale-down { object-fit: scale-down; }
+
+/* object-position modifiers */
+.crop-pos--top-left     { object-position: top left; }
+.crop-pos--top          { object-position: top center; }
+.crop-pos--center       { object-position: center; }
+.crop-pos--bottom       { object-position: bottom center; }
+.crop-pos--bottom-right { object-position: bottom right; }
+.crop-pos--custom       { object-position: 25% 75%; }
+
+/* ── Grid demo cells ────────────────────────────────────────── */
+.gd-basic__cell {
+    align-items: center;
+    border-radius: var(--radius-lg);
+    color: var(--color-white);
+    display: flex;
+    font-size: 0.85rem;
+    font-weight: bold;
+    justify-content: center;
+}
+
+.gd-basic__cell--c1 { background-color: var(--color-green-medium); }
+.gd-basic__cell--c2 { background-color: var(--color-teal); }
+.gd-basic__cell--c3 { background-color: var(--color-blue); }
+.gd-basic__cell--c4 { background-color: var(--color-purple); }
+.gd-basic__cell--c5 { background-color: var(--color-orange-dark); }
+.gd-basic__cell--c6 { background-color: var(--color-red); }
+
+/* ── Mosaic visuals ─────────────────────────────────────────── */
+.gd-mosaic__cell {
+    background-color: var(--color-border);
+    border-radius: var(--radius-lg);
+}
+
+.gd-mosaic__img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* ── Named areas diagram ────────────────────────────────────── */
+.gd-areas-diagram {
+    background-color: var(--color-dark);
+    border-radius: var(--radius-lg);
+    font-family: var(--font-mono);
+}
+
+.gd-page__header  { background-color: var(--color-blue); color: var(--color-white); }
+.gd-page__sidebar { background-color: var(--color-primary-bg); }
+.gd-page__main    { background-color: var(--color-white); border: 1px solid var(--color-border); }
+.gd-page__footer  { background-color: var(--color-dark); color: var(--color-dark-text); }
+
+.gd-page__header,
+.gd-page__sidebar,
+.gd-page__main,
+.gd-page__footer {
+    font-size: 0.9rem;
+}
+
+.gd-page__img {
+    border-radius: var(--radius-md);
+    display: block;
+    height: 120px;
+    margin-top: 0.75rem;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* ── auto-fit cards ─────────────────────────────────────────── */
+.gd-autofit__card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border-light);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-sm);
+}
+
+.gd-autofit__img {
+    display: block;
+    height: 160px;
+    object-fit: cover;
+    width: 100%;
+}
+
+/* ── Compare panels ─────────────────────────────────────────── */
+.gd-compare__panel {
+    background-color: var(--color-bg-lighter);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+}
+
+/* ── Fill / Fit cells ───────────────────────────────────────── */
+.gd-fill-cell,
+.gd-fit-cell {
+    align-items: center;
+    border-radius: 5px;
+    color: var(--color-white);
+    display: flex;
+    font-size: 0.8rem;
+    font-weight: bold;
+    height: 60px;
+    justify-content: center;
+}
+
+.gd-fill-cell { background-color: var(--color-blue); }
+.gd-fit-cell  { background-color: var(--color-purple); }
+
+/* ── Dense flow cells ───────────────────────────────────────── */
+.gd-flow-cell {
+    align-items: center;
+    border-radius: 5px;
+    color: var(--color-white);
+    display: flex;
+    font-size: 0.78rem;
+    font-weight: bold;
+    justify-content: center;
+}
+
+.gd-flow-cell--wide { background-color: var(--color-orange-dark); grid-column: span 2; }
+.gd-flow-cell--a    { background-color: var(--color-teal); }
+.gd-flow-cell--b    { background-color: var(--color-green-medium); }
+
+/* ── Alignment cells ────────────────────────────────────────── */
+.gd-align-box {
+    background-color: var(--color-bg-lighter);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+}
+
+.gd-align-grid {
+    background-color: var(--color-bg-code);
+}
+
+.gd-align-cell {
+    align-items: center;
+    border-radius: var(--radius-md);
+    color: var(--color-white);
+    display: flex;
+    font-size: 0.75rem;
+    font-weight: bold;
+    height: 36px;
+    justify-content: center;
+    width: 36px;
+}
+
+.gd-align-grid--stretch .gd-align-cell {
+    height: auto;
+    width: auto;
+}
+
+.gd-align-cell--a { background-color: var(--color-green-medium); }
+.gd-align-cell--b { background-color: var(--color-blue); }
+.gd-align-cell--c { background-color: var(--color-purple); }
+
+/* ── Box model diagram ──────────────────────────────────────── */
+.bm-diagram {
+    background-color: rgba(255, 152, 0, 0.2);
+    border: 2px dashed var(--color-orange);
+    font-family: var(--font-main);
+}
+
+.bm-diagram__layer--border {
+    background-color: rgba(66, 66, 66, 0.15);
+    border: 3px solid var(--color-dark-border);
+    color: var(--color-dark-border);
+}
+
+.bm-diagram__layer--padding {
+    background-color: rgba(76, 175, 80, 0.2);
+    border: 2px dashed var(--color-primary);
+    color: var(--color-primary-darker);
+}
+
+.bm-diagram__layer--content {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray-medium);
+    color: var(--color-text);
+    font-weight: bold;
+}
+
+/* ── Box model preview visuals ──────────────────────────────── */
+.bm-preview__stage {
+    background-color: var(--color-bg-lighter);
+    border: 1px solid var(--color-border);
+}
+
+.bm-margin-zone {
+    background-color: rgba(255, 152, 0, 0.2);
+    border: 1px dashed var(--color-orange);
+}
+
+.bm-target {
+    background-color: rgba(76, 175, 80, 0.2);
+    border-color: var(--color-dark-border);
+    border-style: solid;
+}
+
+.bm-target__label {
+    background-color: var(--color-white);
+}
+
+.bm-readout {
+    background-color: var(--color-dark);
+}
+
+.bm-code {
+    background-color: var(--color-dark);
+}
+
+/* ── Position explorer visuals ──────────────────────────────── */
+.pos-container {
+    background-color: #eee;
+    border: 2px solid var(--color-gray-medium);
+    border-radius: var(--radius-lg);
+}
+
+.pos-origin-marker {
+    border-left: 2px dashed var(--color-orange-dark);
+    border-top: 2px dashed var(--color-orange-dark);
+    display: none;
+    height: 40px;
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 40px;
+    z-index: 1;
+}
+
+.pos-origin-marker__label {
+    background-color: var(--color-orange-dark);
+}
+
+.pos-sibling {
+    align-items: center;
+    border-radius: var(--radius-md);
+    color: var(--color-white);
+    display: flex;
+    font-size: 0.8rem;
+    font-weight: bold;
+    height: 50px;
+    margin-bottom: 0.5rem;
+    padding: 0 1rem;
+}
+
+.pos-sibling--1 { background-color: var(--color-blue); }
+.pos-sibling--2 { background-color: var(--color-purple); }
+.pos-sibling--3 { background-color: var(--color-teal); }
+
+.pos-target {
+    align-items: center;
+    background-color: var(--color-orange-dark);
+    border: 2px solid var(--color-red-dark);
+    border-radius: var(--radius-md);
+    color: var(--color-white);
+    display: flex;
+    font-size: 0.85rem;
+    font-weight: bold;
+    height: 50px;
+    justify-content: center;
+    margin-bottom: 0.5rem;
+    min-width: 100px;
+    padding: 0 1rem;
+    z-index: 2;
+}
+
+.pos-note {
+    background-color: var(--color-orange-bg);
+    border-left: 4px solid var(--color-orange);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    display: none;
+    margin-top: 0.75rem;
+    padding: 0.6rem 0.9rem;
+}
+
+.pos-scroll-filler {
+    display: none;
+    padding: 0.5rem 0;
+}
+
+.pos-scroll-filler__spacer {
+    height: 500px;
+}

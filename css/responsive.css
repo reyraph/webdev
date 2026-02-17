@@ -1,0 +1,120 @@
+/* ============================================================
+   RESPONSIVE – All @media queries grouped by breakpoint
+   ============================================================ */
+
+/* ── 600px+ : responsive badges & cards ─────────────────────── */
+@media (min-width: 600px) {
+    /* Tablet badge lights up, mobile dims */
+    .responsive-badge--mobile  { opacity: 0.25; }
+    .responsive-badge--tablet  { opacity: 1; }
+
+    /* Responsive card becomes a horizontal row */
+    .resp-card {
+        flex-direction: row;
+    }
+
+    .resp-card__img {
+        flex: 0 0 200px;
+        height: auto;
+        width: 200px;
+    }
+}
+
+/* ── 900px+ : responsive cards side-by-side ─────────────────── */
+@media (min-width: 900px) {
+    /* Desktop badge lights up, tablet dims */
+    .responsive-badge--tablet  { opacity: 0.25; }
+    .responsive-badge--desktop { opacity: 1; }
+
+    /* Cards sit side-by-side */
+    .responsive-cards {
+        align-items: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .resp-card {
+        flex: 1 1 260px;
+        flex-direction: column;
+    }
+
+    .resp-card__img {
+        flex: unset;
+        height: 160px;
+        width: 100%;
+    }
+}
+
+/* ── max 740px : box model & position playgrounds stack ──────── */
+@media (max-width: 740px) {
+    .bm-playground {
+        flex-direction: column;
+    }
+
+    .bm-controls {
+        flex: unset;
+    }
+
+    .pos-playground {
+        flex-direction: column;
+    }
+
+    .pos-controls {
+        flex: unset;
+    }
+}
+
+/* ── max 640px : sidebar layout, grid areas, forms ──────────── */
+@media (max-width: 640px) {
+    /* Flexbox sidebar layout stacks */
+    .flex-layout {
+        flex-direction: column;
+    }
+
+    .flex-layout__sidebar {
+        border-bottom: 1px solid var(--color-primary-border);
+        border-right: none;
+        flex: unset;
+    }
+
+    /* Grid areas collapse to single column */
+    .gd-page {
+        grid-template-areas:
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+        grid-template-columns: 1fr;
+    }
+
+    /* Forms grid single column */
+    .fm-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ── max 600px : grid compare panels stack ──────────────────── */
+@media (max-width: 600px) {
+    .gd-compare,
+    .gd-dense-compare {
+        flex-direction: column;
+    }
+}
+
+/* ── max 580px : grid navigation stacks ─────────────────────── */
+@media (max-width: 580px) {
+    .grid-nav {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+}
+
+/* ── max 540px : flex navigation stacks ─────────────────────── */
+@media (max-width: 540px) {
+    .flex-nav {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+}
