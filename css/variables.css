@@ -4,14 +4,14 @@
 
 :root {
     /* ── Couleurs primaires (vert) ──────────────────────────── */
-    --color-primary:         #4caf50;
-    --color-primary-dark:    #388e3c;
-    --color-primary-darker:  #2e7d32;
-    --color-primary-darkest: #1b5e20;
-    --color-primary-light:   #66bb6a;
+    --color-primary:         #4c7daf;
+    --color-primary-dark:    #385f8e;
+    --color-primary-darker:  #2e4a7d;
+    --color-primary-darkest: #1b395e;
+    --color-primary-light:   #668cbb;
     --color-primary-bg:      #e8f5e9;
     --color-primary-bg-alt:  #f9fbe7;
-    --color-primary-border:  #c8e6c9;
+    --color-primary-border:  #c8d5e6;
 
     /* ── Neutres ────────────────────────────────────────────── */
     --color-text:            #333;

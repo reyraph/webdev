@@ -86,8 +86,8 @@
 
 /* ── Flex navigation text ───────────────────────────────────── */
 .flex-nav__logo {
-    color: var(--color-primary);
-    font-size: 1.1rem;
+    color: var(--color-primary-light);
+    font-size: 1.3rem;
     font-weight: bold;
 }
 
@@ -103,8 +103,8 @@
 
 /* ── Grid navigation text ───────────────────────────────────── */
 .grid-nav__logo {
-    color: var(--color-primary);
-    font-size: 1.1rem;
+    color: var(--color-primary-light);
+    font-size: 1.3rem;
     font-weight: bold;
 }
 
