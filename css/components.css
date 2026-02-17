@@ -828,3 +828,323 @@
     background-color: var(--color-primary-bg);
     border-color: var(--color-primary);
 }
+
+/* ── Typography page – Font cards ──────────────────────────── */
+.ty-font-card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem;
+}
+
+/* ── Typography page – Unit demo cards ─────────────────────── */
+.ty-unit-demo {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+    text-align: center;
+}
+
+/* ── Typography page – Line-height boxes ───────────────────── */
+.ty-lineheight-box {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    flex: 1;
+    padding: 1rem;
+}
+
+/* ── Typography page – Property cards ──────────────────────── */
+.ty-prop-card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 1rem 1.25rem;
+}
+
+/* ── Typography page – Code result box ─────────────────────── */
+.ty-code-result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+/* ── Typography page – Inheritance boxes ───────────────────── */
+.ty-inheritance-box {
+    border-radius: var(--radius-md);
+    padding: 1rem;
+}
+
+.ty-inheritance-box code {
+    display: block;
+    font-size: 0.82rem;
+    margin-bottom: 0.75rem;
+}
+
+.ty-inheritance-box--parent {
+    background-color: rgba(76, 175, 80, 0.15);
+    border: 2px solid var(--color-primary);
+}
+
+.ty-inheritance-box--child {
+    background-color: rgba(33, 150, 243, 0.15);
+    border: 2px solid var(--color-blue);
+}
+
+.ty-inheritance-box--grandchild {
+    background-color: rgba(33, 150, 243, 0.1);
+    border: 2px dashed var(--color-blue);
+}
+
+/* ── Typography page – Fallback examples ───────────────────── */
+.ty-fallback-example {
+    align-items: center;
+    border-radius: var(--radius-md);
+    display: flex;
+    flex: 1 1 200px;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.ty-fallback-example code {
+    font-size: 0.82rem;
+}
+
+.ty-fallback-example span {
+    color: var(--color-text-secondary);
+    font-size: 0.82rem;
+}
+
+.ty-fallback-example--defined {
+    background-color: var(--color-primary-bg);
+    border-left: 4px solid var(--color-primary);
+}
+
+.ty-fallback-example--fallback {
+    background-color: #fdecea;
+    border-left: 4px solid #e74c3c;
+}
+
+.ty-fallback-example--nested {
+    background-color: var(--color-primary-bg);
+    border-left: 4px solid var(--color-primary);
+}
+
+/* ── Typography page – Theme cards ─────────────────────────── */
+.ty-theme-card {
+    border-radius: var(--radius-lg);
+    flex: 1;
+    padding: 1.25rem;
+}
+
+.ty-theme-card h4 {
+    margin-bottom: 0.5rem;
+}
+
+.ty-theme-card p {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    margin-bottom: 0.75rem;
+}
+
+.ty-theme-card__btn {
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+}
+
+.ty-theme-card--light {
+    background-color: #f9f9f9;
+    border: 1px solid var(--color-border);
+    color: #333;
+}
+
+.ty-theme-card--light .ty-theme-card__btn {
+    background-color: #333;
+    color: #fff;
+}
+
+.ty-theme-card--dark {
+    background-color: #2d2d2d;
+    color: #f0f0f0;
+}
+
+.ty-theme-card--dark .ty-theme-card__btn {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* ── Typography page – Theme switcher buttons ──────────────── */
+.ty-theme-btn {
+    border: 2px solid transparent;
+    border-radius: var(--radius-md);
+    color: var(--color-white);
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: bold;
+    padding: 0.4rem 1rem;
+    transition: opacity 0.2s;
+}
+
+.ty-theme-btn:hover { opacity: 0.85; }
+
+.ty-theme-btn--green  { background-color: #4CAF50; }
+.ty-theme-btn--blue   { background-color: #2196F3; }
+.ty-theme-btn--purple { background-color: #9C27B0; }
+.ty-theme-btn--orange { background-color: #FF9800; }
+
+/* ── Typography page – Theme preview ───────────────────────── */
+.ty-theme-preview {
+    --ty-theme: var(--color-primary);
+    border: 2px solid var(--ty-theme);
+    border-radius: var(--radius-lg);
+    padding: 1.25rem;
+    transition: border-color 0.3s;
+}
+
+.ty-theme-preview__heading {
+    color: var(--ty-theme);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s;
+}
+
+.ty-theme-preview__btn {
+    background-color: var(--ty-theme);
+    border: none;
+    border-radius: var(--radius-md);
+    color: var(--color-white);
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 0.75rem;
+    padding: 0.5rem 1.2rem;
+    transition: background-color 0.3s;
+}
+
+/* ── Typography page – calc() cards ────────────────────────── */
+.ty-calc-card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 1rem;
+}
+
+.ty-calc-card__visual {
+    background-color: var(--color-bg-light);
+    border-radius: var(--radius-sm);
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+}
+
+.ty-calc-bar {
+    background-color: var(--color-primary);
+    border-radius: var(--radius-sm);
+    height: 30px;
+    transition: width 0.3s;
+}
+
+/* ── Typography page – calc() layout demo ──────────────────── */
+.ty-calc-layout__sidebar {
+    background-color: var(--color-primary-bg-alt);
+    border-right: 2px solid var(--color-primary);
+}
+
+.ty-calc-layout__main {
+    background-color: var(--color-primary-bg);
+}
+
+/* ── Typography page – calc() preview ──────────────────────── */
+.ty-calc-preview {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    line-height: 1.6;
+    padding: 1rem;
+}
+
+/* ── Typography page – min/max cards ───────────────────────── */
+.ty-minmax-card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    flex: 1;
+    padding: 1.25rem;
+}
+
+.ty-minmax-card__visual {
+    background-color: var(--color-bg-light);
+    border-radius: var(--radius-sm);
+    margin-bottom: 0.75rem;
+    padding: 0.5rem;
+}
+
+.ty-minmax-bar {
+    border-radius: var(--radius-sm);
+    color: var(--color-white);
+    font-size: 0.82rem;
+    font-weight: bold;
+    padding: 0.6rem 1rem;
+    text-align: center;
+}
+
+.ty-minmax-bar--min {
+    background-color: var(--color-blue);
+    width: min(90%, 600px);
+}
+
+.ty-minmax-bar--max {
+    background-color: var(--color-orange);
+    width: max(50%, 300px);
+}
+
+/* ── Typography page – clamp() examples ────────────────────── */
+.ty-clamp-example {
+    align-items: baseline;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    display: flex;
+    gap: 0.75rem;
+    padding: 1rem;
+}
+
+.ty-clamp-preview {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    line-height: 1.6;
+    padding: 1rem;
+}
+
+/* ── Typography page – Section 7 playground ────────────────── */
+.ty-playground__preview {
+    background-color: var(--ty-pg-bg, #ffffff);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    color: var(--ty-pg-text, #333333);
+    font-family: var(--ty-pg-font, system-ui, -apple-system, sans-serif);
+    letter-spacing: var(--ty-pg-ls, 0em);
+    transition: all 0.2s;
+}
+
+.ty-playground__copy-btn {
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: var(--radius-md);
+    color: var(--color-white);
+    cursor: pointer;
+    font-size: 0.82rem;
+    font-weight: bold;
+    padding: 0.35rem 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.ty-playground__copy-btn:hover {
+    background-color: var(--color-primary-dark);
+}

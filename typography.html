@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Typography &amp; Functions – HES-SO Valais</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- ====================================================
+         Page header
+    ===================================================== -->
+    <header class="page-header">
+        <h1>CSS Typography &amp; Functions</h1>
+        <p>Seven hands-on demos covering font families, sizing, text properties, custom properties, calc(), clamp(), and a live playground</p>
+    </header>
+
+    <!-- ====================================================
+         Navigation
+    ===================================================== -->
+    <nav class="grid-nav" aria-label="Section navigation">
+        <span class="grid-nav__logo">&#127344; TypoLab</span>
+        <ul class="grid-nav__links" role="list">
+            <li><a class="grid-nav__link" href="index.html">&#8962; Home</a></li>
+            <li><a class="grid-nav__link" href="#demo-font-families">Fonts</a></li>
+            <li><a class="grid-nav__link" href="#demo-sizing">Sizing</a></li>
+            <li><a class="grid-nav__link" href="#demo-text-properties">Text</a></li>
+            <li><a class="grid-nav__link" href="#demo-custom-properties">Variables</a></li>
+            <li><a class="grid-nav__link" href="#demo-calc">calc()</a></li>
+            <li><a class="grid-nav__link" href="#demo-clamp">clamp()</a></li>
+            <li><a class="grid-nav__link" href="#demo-playground">Playground</a></li>
+        </ul>
+    </nav>
+
+    <main class="page-main">
+
+        <!-- ================================================
+             Section 1 – Font Families & Stacks
+        ================================================= -->
+        <section id="demo-font-families" class="demo-section">
+            <div class="demo-label">
+                <h2>Section 1 &mdash; Font Families &amp; Stacks</h2>
+                <p>
+                    <code>font-family</code> &nbsp;|&nbsp;
+                    <code>serif</code> &nbsp;|&nbsp;
+                    <code>sans-serif</code> &nbsp;|&nbsp;
+                    <code>monospace</code> &nbsp;|&nbsp;
+                    <code>system-ui</code>
+                </p>
+            </div>
+
+            <div class="ty-font-grid">
+
+                <div class="ty-font-card">
+                    <p class="ty-font-card__sample ty-font--serif">
+                        The quick brown fox jumps over the lazy dog. 0123456789
+                    </p>
+                    <code class="ty-font-card__stack">Georgia, 'Times New Roman', serif</code>
+                </div>
+
+                <div class="ty-font-card">
+                    <p class="ty-font-card__sample ty-font--sans">
+                        The quick brown fox jumps over the lazy dog. 0123456789
+                    </p>
+                    <code class="ty-font-card__stack">Arial, Helvetica, sans-serif</code>
+                </div>
+
+                <div class="ty-font-card">
+                    <p class="ty-font-card__sample ty-font--mono">
+                        The quick brown fox jumps over the lazy dog. 0123456789
+                    </p>
+                    <code class="ty-font-card__stack">Consolas, Monaco, 'Courier New', monospace</code>
+                </div>
+
+                <div class="ty-font-card">
+                    <p class="ty-font-card__sample ty-font--system">
+                        The quick brown fox jumps over the lazy dog. 0123456789
+                    </p>
+                    <code class="ty-font-card__stack">system-ui, -apple-system, BlinkMacSystemFont, sans-serif</code>
+                </div>
+
+                <div class="ty-font-card">
+                    <p class="ty-font-card__sample ty-font--cursive">
+                        The quick brown fox jumps over the lazy dog. 0123456789
+                    </p>
+                    <code class="ty-font-card__stack">'Brush Script MT', 'Segoe Script', cursive</code>
+                </div>
+
+                <div class="ty-font-card">
+                    <p class="ty-font-card__sample ty-font--fantasy">
+                        The quick brown fox jumps over the lazy dog. 0123456789
+                    </p>
+                    <code class="ty-font-card__stack">Copperplate, Papyrus, fantasy</code>
+                </div>
+
+            </div>
+
+            <div class="demo-why">
+                <p>
+                    <strong>Why font stacks?</strong> A font stack is a list of fonts the browser
+                    tries in order. Think of it like a <code>try-catch</code> in Java &mdash; if
+                    the first font fails to load, the browser falls back to the next one. The last
+                    value should always be a generic family (<code>serif</code>,
+                    <code>sans-serif</code>, <code>monospace</code>) as the ultimate safety net.
+                </p>
+            </div>
+        </section>
+
+        <!-- ================================================
+             Section 2 – Font Sizing & Line Height
+        ================================================= -->
+        <section id="demo-sizing" class="demo-section">
+            <div class="demo-label">
+                <h2>Section 2 &mdash; Font Sizing &amp; Line Height</h2>
+                <p>
+                    <code>font-size</code> &nbsp;|&nbsp;
+                    <code>line-height</code> &nbsp;|&nbsp;
+                    <code>px</code> &nbsp;|&nbsp;
+                    <code>em</code> &nbsp;|&nbsp;
+                    <code>rem</code> &nbsp;|&nbsp;
+                    <code>%</code>
+                </p>
+            </div>
+
+            <p class="demo-section__note">
+                CSS offers several units for sizing text. Each behaves differently depending on
+                context and inheritance.
+            </p>
+
+            <!-- Part A – Unit comparison -->
+            <div class="ty-units-grid">
+
+                <div class="ty-unit-demo">
+                    <p class="ty-unit-demo__sample" style="font-size: 16px">
+                        Hello World
+                    </p>
+                    <span class="ty-unit-demo__label"><code>16px</code> &mdash; absolute, always 16 pixels</span>
+                </div>
+
+                <div class="ty-unit-demo">
+                    <p class="ty-unit-demo__sample" style="font-size: 1em">
+                        Hello World
+                    </p>
+                    <span class="ty-unit-demo__label"><code>1em</code> &mdash; relative to parent font-size</span>
+                </div>
+
+                <div class="ty-unit-demo">
+                    <p class="ty-unit-demo__sample" style="font-size: 1rem">
+                        Hello World
+                    </p>
+                    <span class="ty-unit-demo__label"><code>1rem</code> &mdash; relative to root (:root = 16px)</span>
+                </div>
+
+                <div class="ty-unit-demo">
+                    <p class="ty-unit-demo__sample" style="font-size: 100%">
+                        Hello World
+                    </p>
+                    <span class="ty-unit-demo__label"><code>100%</code> &mdash; same as 1em (parent-relative)</span>
+                </div>
+
+            </div>
+
+            <!-- Part B – Line-height comparison -->
+            <p class="demo-section__note">
+                <code>line-height</code> controls the space between lines. A unitless value
+                (e.g.&nbsp;<code>1.5</code>) is recommended because it scales proportionally
+                with font-size changes.
+            </p>
+
+            <div class="ty-lineheight-compare">
+
+                <div class="ty-lineheight-box ty-lineheight-box--tight">
+                    <strong>line-height: 1</strong>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam, quis nostrud exercitation ullamco laboris.
+                    </p>
+                </div>
+
+                <div class="ty-lineheight-box ty-lineheight-box--normal">
+                    <strong>line-height: 1.5</strong>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam, quis nostrud exercitation ullamco laboris.
+                    </p>
+                </div>
+
+                <div class="ty-lineheight-box ty-lineheight-box--loose">
+                    <strong>line-height: 2</strong>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam, quis nostrud exercitation ullamco laboris.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="demo-why">
+                <p>
+                    <strong>rem vs em:</strong> <code>rem</code> always references the
+                    <code>:root</code> element &mdash; like a <code>static final</code>
+                    constant in Java. <code>em</code> inherits from its parent element &mdash;
+                    like class inheritance where the value can change depending on context.
+                    Prefer <code>rem</code> for predictable sizing.
+                </p>
+            </div>
+        </section>
+
+        <!-- ================================================
+             Section 3 – Text Styling Properties
+        ================================================= -->
+        <section id="demo-text-properties" class="demo-section">
+            <div class="demo-label">
+                <h2>Section 3 &mdash; Text Styling Properties</h2>
+                <p>
+                    <code>text-align</code> &nbsp;|&nbsp;
+                    <code>text-transform</code> &nbsp;|&nbsp;
+                    <code>letter-spacing</code> &nbsp;|&nbsp;
+                    <code>text-decoration</code> &nbsp;|&nbsp;
+                    <code>text-shadow</code> &nbsp;|&nbsp;
+                    <code>font-weight</code>
+                </p>
+            </div>
+
+            <div class="ty-props-grid">
+
+                <!-- text-align -->
+                <div class="ty-prop-card">
+                    <h4 class="ty-prop-card__title">text-align</h4>
+                    <div class="ty-prop-card__samples">
+                        <p style="text-align: left">Left aligned text</p>
+                        <p style="text-align: center">Center aligned text</p>
+                        <p style="text-align: right">Right aligned text</p>
+                        <p style="text-align: justify">Justified text spreads words evenly across the full width of the line to create clean edges on both sides.</p>
+                    </div>
+                </div>
+
+                <!-- text-transform -->
+                <div class="ty-prop-card">
+                    <h4 class="ty-prop-card__title">text-transform</h4>
+                    <div class="ty-prop-card__samples">
+                        <p style="text-transform: uppercase">uppercase text</p>
+                        <p style="text-transform: lowercase">LOWERCASE TEXT</p>
+                        <p style="text-transform: capitalize">capitalize each word</p>
+                        <p style="text-transform: none">None (original case)</p>
+                    </div>
+                </div>
+
+                <!-- letter-spacing -->
+                <div class="ty-prop-card">
+                    <h4 class="ty-prop-card__title">letter-spacing</h4>
+                    <div class="ty-prop-card__samples">
+                        <p style="letter-spacing: normal">Normal spacing</p>
+                        <p style="letter-spacing: 0.1em">Loose: 0.1em</p>
+                        <p style="letter-spacing: 0.25em">Wide: 0.25em</p>
+                        <p style="letter-spacing: -0.02em">Tight: -0.02em</p>
+                    </div>
+                </div>
+
+                <!-- word-spacing -->
+                <div class="ty-prop-card">
+                    <h4 class="ty-prop-card__title">word-spacing</h4>
+                    <div class="ty-prop-card__samples">
+                        <p style="word-spacing: normal">Normal word spacing</p>
+                        <p style="word-spacing: 0.5em">Wide: 0.5em between words</p>
+                        <p style="word-spacing: 1em">Very wide: 1em between words</p>
+                    </div>
+                </div>
+
+                <!-- text-decoration -->
+                <div class="ty-prop-card">
+                    <h4 class="ty-prop-card__title">text-decoration</h4>
+                    <div class="ty-prop-card__samples">
+                        <p style="text-decoration: underline">underline</p>
+                        <p style="text-decoration: overline">overline</p>
+                        <p style="text-decoration: line-through">line-through</p>
+                        <p style="text-decoration: underline wavy var(--color-error)">wavy underline</p>
+                    </div>
+                </div>
+
+                <!-- text-shadow -->
+                <div class="ty-prop-card">
+                    <h4 class="ty-prop-card__title">text-shadow</h4>
+                    <div class="ty-prop-card__samples ty-prop-card__samples--large">
+                        <p style="text-shadow: 1px 1px 2px rgba(0,0,0,0.3)">Subtle shadow</p>
+                        <p style="text-shadow: 2px 2px 0 #333">Hard shadow</p>
+                        <p style="text-shadow: 0 0 8px var(--color-primary)">Glow effect</p>
+                        <p style="text-shadow: 2px 2px 0 #e74c3c, 4px 4px 0 #3498db">Multiple</p>
+                    </div>
+                </div>
+
+                <!-- font-weight -->
+                <div class="ty-prop-card">
+                    <h4 class="ty-prop-card__title">font-weight</h4>
+                    <div class="ty-prop-card__samples">
+                        <p style="font-weight: 300">Light (300)</p>
+                        <p style="font-weight: 400">Normal (400)</p>
+                        <p style="font-weight: 600">Semi-bold (600)</p>
+                        <p style="font-weight: 700">Bold (700)</p>
+                        <p style="font-weight: 900">Black (900)</p>
+                    </div>
+                </div>
+
+                <!-- font-style -->
+                <div class="ty-prop-card">
+                    <h4 class="ty-prop-card__title">font-style</h4>
+                    <div class="ty-prop-card__samples">
+                        <p style="font-style: normal">Normal style</p>
+                        <p style="font-style: italic">Italic style</p>
+                        <p style="font-style: oblique">Oblique style</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ================================================
+             Section 4 – CSS Custom Properties (Variables)
+        ================================================= -->
+        <section id="demo-custom-properties" class="demo-section">
+            <div class="demo-label">
+                <h2>Section 4 &mdash; CSS Custom Properties (Variables)</h2>
+                <p>
+                    <code>--variable</code> &nbsp;|&nbsp;
+                    <code>var()</code> &nbsp;|&nbsp;
+                    <code>:root</code> &nbsp;|&nbsp;
+                    <code>fallback</code> &nbsp;|&nbsp;
+                    <code>scope</code>
+                </p>
+            </div>
+
+            <!-- Part A – Declaration & usage -->
+            <div class="ty-vars-section">
+                <h3 class="ty-vars-section__title">A &mdash; Declaration &amp; Usage</h3>
+                <div class="ty-code-compare">
+                    <pre class="ty-code-block"><code>/* Declare in :root */
+:root {
+    --brand-color: #4CAF50;
+    --spacing: 1.5rem;
+}
+
+/* Use anywhere */
+.button {
+    background: var(--brand-color);
+    padding: var(--spacing);
+}</code></pre>
+                    <div class="ty-code-result">
+                        <button class="ty-demo-button" style="background: var(--color-primary); color: #fff; border: none; border-radius: var(--radius-md); padding: 1.5rem; font-size: 1rem; cursor: pointer">
+                            I use var(--brand-color)
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Part B – Inheritance cascade -->
+            <div class="ty-vars-section">
+                <h3 class="ty-vars-section__title">B &mdash; Inheritance Cascade</h3>
+                <p class="demo-section__note">
+                    Custom properties inherit down the DOM tree. A child can override the
+                    value, and its descendants will see the new value.
+                </p>
+                <div class="ty-inheritance-demo">
+                    <div class="ty-inheritance-box ty-inheritance-box--parent">
+                        <code>--box-color: green</code>
+                        <div class="ty-inheritance-box ty-inheritance-box--child">
+                            <code>--box-color: blue</code> (override)
+                            <div class="ty-inheritance-box ty-inheritance-box--grandchild">
+                                <code>inherits blue</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Part C – Fallback values -->
+            <div class="ty-vars-section">
+                <h3 class="ty-vars-section__title">C &mdash; Fallback Values</h3>
+                <div class="ty-fallback-demo">
+                    <div class="ty-fallback-example ty-fallback-example--defined">
+                        <code>var(--color-primary)</code>
+                        <span>Uses the defined green value</span>
+                    </div>
+                    <div class="ty-fallback-example ty-fallback-example--fallback">
+                        <code>var(--undefined, #e74c3c)</code>
+                        <span>Falls back to red (#e74c3c)</span>
+                    </div>
+                    <div class="ty-fallback-example ty-fallback-example--nested">
+                        <code>var(--a, var(--color-primary))</code>
+                        <span>Nested fallback to green</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Part D – Scoped overrides -->
+            <div class="ty-vars-section">
+                <h3 class="ty-vars-section__title">D &mdash; Scoped Overrides (Theming)</h3>
+                <p class="demo-section__note">
+                    The same variable names can hold different values when scoped to different
+                    containers &mdash; this is the basis of CSS theming.
+                </p>
+                <div class="ty-scope-demo">
+                    <div class="ty-theme-card ty-theme-card--light">
+                        <h4>Light Theme</h4>
+                        <p>--bg: white, --text: dark</p>
+                        <button class="ty-theme-card__btn">Button</button>
+                    </div>
+                    <div class="ty-theme-card ty-theme-card--dark">
+                        <h4>Dark Theme</h4>
+                        <p>--bg: dark, --text: white</p>
+                        <button class="ty-theme-card__btn">Button</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Part E – Theme switcher -->
+            <div class="ty-vars-section">
+                <h3 class="ty-vars-section__title">E &mdash; Live Theme Switcher</h3>
+                <p class="demo-section__note">
+                    Click a button to change <code>--ty-theme</code> on the container via
+                    JavaScript. All children update instantly.
+                </p>
+                <div class="ty-theme-switcher">
+                    <div class="ty-theme-switcher__buttons">
+                        <button class="ty-theme-btn ty-theme-btn--green" data-color="#4CAF50">Green</button>
+                        <button class="ty-theme-btn ty-theme-btn--blue" data-color="#2196F3">Blue</button>
+                        <button class="ty-theme-btn ty-theme-btn--purple" data-color="#9C27B0">Purple</button>
+                        <button class="ty-theme-btn ty-theme-btn--orange" data-color="#FF9800">Orange</button>
+                    </div>
+                    <div class="ty-theme-preview" id="ty-theme-preview">
+                        <h4 class="ty-theme-preview__heading">Themed Heading</h4>
+                        <p class="ty-theme-preview__text">
+                            This entire area uses <code>var(--ty-theme)</code> for its accent
+                            color. The border, heading, and button all respond to the change.
+                        </p>
+                        <button class="ty-theme-preview__btn">Themed Button</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="demo-why">
+                <p>
+                    <strong>Why custom properties?</strong> Think of them like class-level
+                    constants in Java &mdash; but <em>dynamic</em>. You declare them once in
+                    <code>:root</code> and use them everywhere. Unlike Sass variables, CSS
+                    custom properties are live in the browser and can be changed at runtime
+                    via JavaScript with <code>element.style.setProperty()</code>.
+                </p>
+            </div>
+        </section>
+
+        <!-- ================================================
+             Section 5 – calc()
+        ================================================= -->
+        <section id="demo-calc" class="demo-section">
+            <div class="demo-label">
+                <h2>Section 5 &mdash; Dynamic Calculations with calc()</h2>
+                <p>
+                    <code>calc()</code> &nbsp;|&nbsp;
+                    <code>+</code> &nbsp;|&nbsp;
+                    <code>-</code> &nbsp;|&nbsp;
+                    <code>*</code> &nbsp;|&nbsp;
+                    <code>/</code> &nbsp;|&nbsp;
+                    <code>mixing units</code>
+                </p>
+            </div>
+
+            <p class="demo-section__note">
+                <code>calc()</code> lets you mix different CSS units in a single expression.
+                The browser resolves the calculation at render time.
+            </p>
+
+            <!-- Part A – Visual examples -->
+            <div class="ty-calc-grid">
+
+                <div class="ty-calc-card">
+                    <div class="ty-calc-card__visual">
+                        <div class="ty-calc-bar" style="width: calc(100% - 80px)"></div>
+                    </div>
+                    <code class="ty-calc-card__code">width: calc(100% - 80px)</code>
+                    <span class="ty-calc-card__explain">Full width minus fixed 80px margins</span>
+                </div>
+
+                <div class="ty-calc-card">
+                    <div class="ty-calc-card__visual">
+                        <div class="ty-calc-bar" style="width: calc(50% + 20px)"></div>
+                    </div>
+                    <code class="ty-calc-card__code">width: calc(50% + 20px)</code>
+                    <span class="ty-calc-card__explain">Half width plus 20px offset</span>
+                </div>
+
+                <div class="ty-calc-card">
+                    <div class="ty-calc-card__visual">
+                        <div class="ty-calc-bar" style="width: calc(3rem * 4)"></div>
+                    </div>
+                    <code class="ty-calc-card__code">width: calc(3rem * 4)</code>
+                    <span class="ty-calc-card__explain">Multiplying relative units</span>
+                </div>
+
+                <div class="ty-calc-card">
+                    <div class="ty-calc-card__visual">
+                        <div class="ty-calc-bar" style="width: calc(25% + 5vw)"></div>
+                    </div>
+                    <code class="ty-calc-card__code">width: calc(25% + 5vw)</code>
+                    <span class="ty-calc-card__explain">Mixing percentage + viewport units</span>
+                </div>
+
+            </div>
+
+            <!-- Part B – Layout example -->
+            <p class="demo-section__note">
+                A common use case: fixed sidebar + fluid main content.
+            </p>
+            <div class="ty-calc-layout">
+                <div class="ty-calc-layout__sidebar">Sidebar (250px)</div>
+                <div class="ty-calc-layout__main">Main content: <code>width: calc(100% - 250px)</code></div>
+            </div>
+
+            <!-- Part C – Interactive playground -->
+            <div class="ty-calc-playground">
+                <h4 class="ty-calc-playground__title">Interactive calc() playground</h4>
+                <div class="ty-calc-controls">
+                    <label class="bm-controls__group">
+                        Base (px):
+                        <input type="range" id="ty-calc-base" min="10" max="30" value="16">
+                        <output id="ty-calc-base-out">16</output>
+                    </label>
+                    <label class="bm-controls__group">
+                        Viewport scale (vw):
+                        <input type="range" id="ty-calc-vw" min="0" max="3" step="0.1" value="0.5">
+                        <output id="ty-calc-vw-out">0.5</output>
+                    </label>
+                </div>
+                <div class="ty-calc-formula" id="ty-calc-formula">
+                    font-size: calc(16px + 0.5vw)
+                </div>
+                <p class="ty-calc-preview" id="ty-calc-preview" style="font-size: calc(16px + 0.5vw)">
+                    This text resizes based on the calc() formula above. Try changing the
+                    sliders to see how combining a fixed base with a viewport unit creates
+                    smoothly responsive typography.
+                </p>
+            </div>
+
+            <div class="demo-why">
+                <p>
+                    <strong>Why calc()?</strong> It solves the problem of mixing units that are
+                    otherwise incompatible &mdash; like subtracting pixels from percentages.
+                    Think of it like type casting in Java: <code>calc()</code> handles the unit
+                    conversion automatically at render time.
+                </p>
+            </div>
+        </section>
+
+        <!-- ================================================
+             Section 6 – clamp(), min(), max()
+        ================================================= -->
+        <section id="demo-clamp" class="demo-section">
+            <div class="demo-label">
+                <h2>Section 6 &mdash; Responsive Sizing: clamp(), min(), max()</h2>
+                <p>
+                    <code>clamp()</code> &nbsp;|&nbsp;
+                    <code>min()</code> &nbsp;|&nbsp;
+                    <code>max()</code> &nbsp;|&nbsp;
+                    <code>fluid typography</code>
+                </p>
+            </div>
+
+            <!-- Part A – min() and max() -->
+            <p class="demo-section__note">
+                <code>min()</code> picks the smallest value; <code>max()</code> picks the
+                largest. They set upper and lower bounds on CSS values.
+            </p>
+
+            <div class="ty-minmax-grid">
+                <div class="ty-minmax-card">
+                    <h4 class="ty-minmax-card__title">min(90%, 600px)</h4>
+                    <div class="ty-minmax-card__visual">
+                        <div class="ty-minmax-bar ty-minmax-bar--min">
+                            Never wider than 600px
+                        </div>
+                    </div>
+                    <code class="ty-minmax-card__code">width: min(90%, 600px)</code>
+                </div>
+                <div class="ty-minmax-card">
+                    <h4 class="ty-minmax-card__title">max(50%, 300px)</h4>
+                    <div class="ty-minmax-card__visual">
+                        <div class="ty-minmax-bar ty-minmax-bar--max">
+                            Never narrower than 300px
+                        </div>
+                    </div>
+                    <code class="ty-minmax-card__code">width: max(50%, 300px)</code>
+                </div>
+            </div>
+
+            <!-- Part B – Fluid typography comparison -->
+            <p class="demo-section__note">
+                Resize your browser window to see the difference between fixed, viewport-only,
+                and clamped font sizes.
+            </p>
+
+            <div class="ty-clamp-compare">
+                <div class="ty-clamp-example">
+                    <span class="ty-clamp-example__label">Fixed</span>
+                    <p class="ty-clamp-example__text" style="font-size: 16px">
+                        font-size: 16px &mdash; stays the same regardless of viewport.
+                    </p>
+                </div>
+                <div class="ty-clamp-example">
+                    <span class="ty-clamp-example__label">Viewport</span>
+                    <p class="ty-clamp-example__text" style="font-size: 2.5vw">
+                        font-size: 2.5vw &mdash; scales but can get too small or too large.
+                    </p>
+                </div>
+                <div class="ty-clamp-example">
+                    <span class="ty-clamp-example__label">Clamped</span>
+                    <p class="ty-clamp-example__text" style="font-size: clamp(1rem, 2.5vw, 2rem)">
+                        font-size: clamp(1rem, 2.5vw, 2rem) &mdash; scales smoothly within bounds.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Part C – clamp() builder -->
+            <div class="ty-clamp-builder">
+                <h4 class="ty-clamp-builder__title">Interactive clamp() Builder</h4>
+                <div class="ty-clamp-controls">
+                    <label class="bm-controls__group">
+                        Min (rem):
+                        <input type="range" id="ty-clamp-min" min="0.75" max="1.5" step="0.05" value="1">
+                        <output id="ty-clamp-min-out">1</output>
+                    </label>
+                    <label class="bm-controls__group">
+                        Preferred (vw):
+                        <input type="range" id="ty-clamp-pref" min="1" max="5" step="0.1" value="2.5">
+                        <output id="ty-clamp-pref-out">2.5</output>
+                    </label>
+                    <label class="bm-controls__group">
+                        Max (rem):
+                        <input type="range" id="ty-clamp-max" min="1.5" max="4" step="0.1" value="2">
+                        <output id="ty-clamp-max-out">2</output>
+                    </label>
+                </div>
+                <div class="ty-clamp-code" id="ty-clamp-code">
+                    font-size: clamp(1rem, 2.5vw, 2rem);
+                </div>
+                <p class="ty-clamp-preview" id="ty-clamp-preview" style="font-size: clamp(1rem, 2.5vw, 2rem)">
+                    This text uses the clamp() formula built above. Adjust the sliders
+                    and resize the window to see how minimum, preferred, and maximum
+                    values interact to create fluid typography.
+                </p>
+            </div>
+
+            <div class="demo-why">
+                <p>
+                    <strong>Why clamp()?</strong> It replaces complex media-query breakpoints
+                    for typography. Think of it like bounding a variable in Java:
+                    <code>Math.max(min, Math.min(preferred, max))</code>. The preferred value
+                    (usually viewport-based) scales smoothly but never exceeds the bounds,
+                    ensuring readability on all screen sizes.
+                </p>
+            </div>
+        </section>
+
+        <!-- ================================================
+             Section 7 – Typography Playground
+        ================================================= -->
+        <section id="demo-playground" class="demo-section">
+            <div class="demo-label">
+                <h2>Section 7 &mdash; Typography Playground</h2>
+                <p>
+                    <code>--variables</code> &nbsp;|&nbsp;
+                    <code>calc()</code> &nbsp;|&nbsp;
+                    <code>clamp()</code> &nbsp;|&nbsp;
+                    <code>live editing</code>
+                </p>
+            </div>
+
+            <p class="demo-section__note">
+                Combine everything: custom properties, calc(), and clamp() in a live editor.
+                Tweak the controls and watch the preview update in real time.
+            </p>
+
+            <div class="ty-playground">
+
+                <!-- Controls panel -->
+                <div class="ty-playground__controls">
+
+                    <fieldset class="bm-controls__fieldset">
+                        <legend>Colors</legend>
+                        <label class="ty-playground__control-group">
+                            Text color
+                            <input type="color" id="ty-pg-text-color" value="#333333">
+                        </label>
+                        <label class="ty-playground__control-group">
+                            Background
+                            <input type="color" id="ty-pg-bg-color" value="#ffffff">
+                        </label>
+                    </fieldset>
+
+                    <fieldset class="bm-controls__fieldset">
+                        <legend>Typography</legend>
+                        <label class="bm-controls__group">
+                            Base size (px):
+                            <input type="range" id="ty-pg-base" min="12" max="24" value="16">
+                            <output id="ty-pg-base-out">16</output>
+                        </label>
+                        <label class="bm-controls__group">
+                            Scale ratio:
+                            <input type="range" id="ty-pg-ratio" min="1.1" max="1.5" step="0.01" value="1.25">
+                            <output id="ty-pg-ratio-out">1.25</output>
+                        </label>
+                        <label class="bm-controls__group">
+                            Line height:
+                            <input type="range" id="ty-pg-lh" min="1" max="2.5" step="0.05" value="1.5">
+                            <output id="ty-pg-lh-out">1.5</output>
+                        </label>
+                        <label class="bm-controls__group">
+                            Letter spacing (em):
+                            <input type="range" id="ty-pg-ls" min="-0.02" max="0.15" step="0.005" value="0">
+                            <output id="ty-pg-ls-out">0</output>
+                        </label>
+                    </fieldset>
+
+                    <fieldset class="bm-controls__fieldset">
+                        <legend>Font Family</legend>
+                        <select class="pos-controls__select" id="ty-pg-font">
+                            <option value="system-ui, -apple-system, sans-serif">System UI</option>
+                            <option value="Georgia, 'Times New Roman', serif">Serif</option>
+                            <option value="Arial, Helvetica, sans-serif">Sans-serif</option>
+                            <option value="Consolas, Monaco, monospace">Monospace</option>
+                        </select>
+                    </fieldset>
+
+                </div>
+
+                <!-- Live preview -->
+                <div class="ty-playground__preview" id="ty-pg-preview">
+                    <h2 class="ty-playground__preview-heading">Heading Level 2</h2>
+                    <p class="ty-playground__preview-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                        commodo consequat.
+                    </p>
+                    <pre class="ty-playground__preview-code"><code>const greeting = "Hello, World!";
+console.log(greeting);</code></pre>
+                    <ul class="ty-playground__preview-list">
+                        <li>First list item</li>
+                        <li>Second list item</li>
+                        <li>Third list item</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Generated CSS output -->
+            <div class="ty-playground__output">
+                <div class="ty-playground__output-header">
+                    <strong>Generated CSS</strong>
+                    <button class="ty-playground__copy-btn" id="ty-pg-copy">Copy</button>
+                </div>
+                <pre class="ty-playground__code" id="ty-pg-code">:root {
+    --text-color: #333333;
+    --bg-color: #ffffff;
+    --base-size: 16px;
+    --scale-ratio: 1.25;
+    --line-height: 1.5;
+    --letter-spacing: 0em;
+    --font-family: system-ui, -apple-system, sans-serif;
+    --heading-size: calc(var(--base-size) * var(--scale-ratio));
+}</pre>
+            </div>
+
+            <div class="demo-why">
+                <p>
+                    <strong>Design systems in CSS:</strong> This playground demonstrates how
+                    custom properties, calc(), and clamp() work together. Just like defining
+                    constants and methods in a Java class, CSS custom properties centralize
+                    design decisions. <code>calc()</code> computes derived values (like methods
+                    that return computed results), and <code>clamp()</code> ensures they stay
+                    within safe bounds. This is the modern approach to scalable CSS architecture.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ====================================================
+         Page footer
+    ===================================================== -->
+    <footer class="page-footer">
+        <p>
+            CSS Typography &amp; Functions Demo &mdash; HES-SO Valais Web Development Course
+        </p>
+    </footer>
+
+    <script src="js/typography.js"></script>
+</body>
+</html>

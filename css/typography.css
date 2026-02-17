@@ -688,3 +688,196 @@
     line-height: 1.6;
     min-height: 1.5em;
 }
+
+/* ── Typography page – Font family specimens ───────────────── */
+.ty-font--serif   { font-family: Georgia, 'Times New Roman', serif; }
+.ty-font--sans    { font-family: Arial, Helvetica, sans-serif; }
+.ty-font--mono    { font-family: Consolas, Monaco, 'Courier New', monospace; }
+.ty-font--system  { font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif; }
+.ty-font--cursive { font-family: 'Brush Script MT', 'Segoe Script', cursive; }
+.ty-font--fantasy { font-family: Copperplate, Papyrus, fantasy; }
+
+.ty-font-card__sample {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+    min-height: 3.5rem;
+}
+
+.ty-font-card__stack {
+    color: var(--color-text-secondary);
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    word-break: break-all;
+}
+
+/* ── Typography page – Unit demo labels ────────────────────── */
+.ty-unit-demo__sample {
+    margin-bottom: 0.5rem;
+}
+
+.ty-unit-demo__label {
+    color: var(--color-text-secondary);
+    font-size: 0.82rem;
+}
+
+/* ── Typography page – Line-height text ────────────────────── */
+.ty-lineheight-box strong {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+.ty-lineheight-box--tight p  { line-height: 1; }
+.ty-lineheight-box--normal p { line-height: 1.5; }
+.ty-lineheight-box--loose p  { line-height: 2; }
+
+/* ── Typography page – Property card titles ────────────────── */
+.ty-prop-card__title {
+    border-bottom: 2px solid var(--color-primary);
+    color: var(--color-primary-darker);
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.4rem;
+}
+
+.ty-prop-card__samples p {
+    font-size: 0.9rem;
+    margin-bottom: 0.35rem;
+}
+
+.ty-prop-card__samples--large p {
+    font-size: 1.2rem;
+}
+
+/* ── Typography page – Section 4 titles ────────────────────── */
+.ty-vars-section__title {
+    color: var(--color-primary-darker);
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+}
+
+/* ── Typography page – Code blocks ─────────────────────────── */
+.ty-code-block {
+    background-color: var(--color-dark);
+    border-radius: var(--radius-md);
+    color: #e0e0e0;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    line-height: 1.6;
+    overflow-x: auto;
+    padding: 1rem 1.25rem;
+}
+
+/* ── Typography page – calc() formula display ──────────────── */
+.ty-calc-formula {
+    background-color: var(--color-dark);
+    border-radius: var(--radius-md);
+    color: #a5d6a7;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.6rem 1rem;
+}
+
+.ty-calc-card__code {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    margin-top: 0.5rem;
+}
+
+.ty-calc-card__explain {
+    color: var(--color-text-secondary);
+    font-size: 0.8rem;
+}
+
+/* ── Typography page – clamp() code display ────────────────── */
+.ty-clamp-code {
+    background-color: var(--color-dark);
+    border-radius: var(--radius-md);
+    color: #a5d6a7;
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.6rem 1rem;
+}
+
+.ty-clamp-example__label {
+    background-color: var(--color-primary);
+    border-radius: var(--radius-sm);
+    color: var(--color-white);
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 0.15rem 0.5rem;
+}
+
+/* ── Typography page – Playground titles ───────────────────── */
+.ty-calc-playground__title,
+.ty-clamp-builder__title {
+    color: var(--color-primary-darker);
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+}
+
+.ty-minmax-card__title {
+    color: var(--color-primary-darker);
+    font-size: 0.95rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.ty-minmax-card__code {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    margin-top: 0.5rem;
+}
+
+/* ── Typography page – Section 7 playground text ───────────── */
+.ty-playground__preview-heading {
+    font-size: calc(var(--ty-pg-base, 16px) * var(--ty-pg-ratio, 1.25));
+    margin-bottom: 0.75rem;
+}
+
+.ty-playground__preview-text {
+    font-size: var(--ty-pg-base, 16px);
+    line-height: var(--ty-pg-lh, 1.5);
+}
+
+.ty-playground__preview-code {
+    background-color: var(--color-bg-code);
+    border-radius: var(--radius-md);
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+    margin: 1rem 0;
+    padding: 0.75rem 1rem;
+}
+
+.ty-playground__preview-list {
+    font-size: var(--ty-pg-base, 16px);
+    line-height: var(--ty-pg-lh, 1.5);
+    padding-left: 1.5rem;
+}
+
+.ty-playground__preview-list li {
+    list-style: disc;
+    margin-bottom: 0.3rem;
+}
+
+.ty-playground__code {
+    background-color: var(--color-dark);
+    border-radius: var(--radius-md);
+    color: #e0e0e0;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    line-height: 1.6;
+    margin: 0;
+    overflow-x: auto;
+    padding: 1rem 1.25rem;
+    white-space: pre;
+}

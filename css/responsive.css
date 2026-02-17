@@ -130,3 +130,37 @@
         gap: 0.75rem;
     }
 }
+
+/* ── max 740px : typography page grids & playground stack ───── */
+@media (max-width: 740px) {
+    .ty-font-grid,
+    .ty-props-grid,
+    .ty-calc-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ty-lineheight-compare,
+    .ty-scope-demo,
+    .ty-minmax-grid,
+    .ty-code-compare {
+        flex-direction: column;
+    }
+
+    .ty-playground {
+        flex-direction: column;
+    }
+
+    .ty-playground__controls {
+        flex: unset;
+    }
+
+    .ty-calc-layout {
+        flex-direction: column;
+    }
+
+    .ty-calc-layout__sidebar {
+        border-bottom: 2px solid var(--color-primary);
+        border-right: none;
+        flex: unset;
+    }
+}
