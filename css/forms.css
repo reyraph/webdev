@@ -335,3 +335,10 @@ form input.error {
 .fm-grid--2col {
     grid-template-columns: 1fr 1fr;
 }
+
+/* ── Specificity calculator input (selectors.html) ─────────── */
+.sel-calc__input {
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    max-width: 500px;
+}

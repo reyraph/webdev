@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>CSS Selectors – Interactive Guide</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/typography.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+    <!-- ====================================================
+         Page header
+    ===================================================== -->
+    <header class="page-header">
+        <h1>CSS Selectors</h1>
+        <p>An interactive guide to every CSS selector — from basic to advanced</p>
+    </header>
+
+    <!-- ====================================================
+         Navigation
+    ===================================================== -->
+    <nav class="grid-nav" aria-label="Section navigation">
+        <span class="grid-nav__logo">&#9783; CSS Selectors</span>
+        <ul class="grid-nav__links" role="list">
+            <li><a class="grid-nav__link" href="index.html">&#8962; Home</a></li>
+            <li><a class="grid-nav__link" href="#demo-basic">Basic</a></li>
+            <li><a class="grid-nav__link" href="#demo-combinators">Combinators</a></li>
+            <li><a class="grid-nav__link" href="#demo-attributes">Attributes</a></li>
+            <li><a class="grid-nav__link" href="#demo-pseudo-classes">Pseudo-classes</a></li>
+            <li><a class="grid-nav__link" href="#demo-pseudo-elements">Pseudo-elements</a></li>
+            <li><a class="grid-nav__link" href="#demo-specificity">Specificity</a></li>
+        </ul>
+    </nav>
+
+    <main class="page-main">
+
+        <!-- ================================================
+             Section 1 – Basic Selectors
+        ================================================= -->
+        <section id="demo-basic" class="demo-section">
+            <div class="demo-label">
+                <h2>Section 1 — Basic Selectors</h2>
+                <p>
+                    <code>element</code> &nbsp;|&nbsp;
+                    <code>.class</code> &nbsp;|&nbsp;
+                    <code>#id</code> &nbsp;|&nbsp;
+                    <code>*</code> &nbsp;|&nbsp;
+                    <code>h1, h2</code>
+                </p>
+            </div>
+
+            <p class="demo-section__note">
+                Basic selectors are the building blocks of CSS targeting. They let you select elements
+                by their tag name, class, ID, or apply styles universally.
+            </p>
+
+            <div class="sel-demo-grid">
+                <!-- Element selector -->
+                <div class="sel-demo-card">
+                    <h3 class="sel-demo-card__title">Element selector</h3>
+                    <div class="sel-demo-card__preview sel-element-demo">
+                        <p>This paragraph is styled by the element selector</p>
+                        <span>This span is not affected</span>
+                    </div>
+                    <pre class="sel-code-block"><code>.sel-element-demo p {
+    color: #1565c0;
+    font-style: italic;
+}</code></pre>
+                    <p class="sel-demo-card__explain">Selects ALL <code>&lt;p&gt;</code> elements inside the container.</p>
+                </div>
+
+                <!-- Class selector -->
+                <div class="sel-demo-card">
+                    <h3 class="sel-demo-card__title">Class selector</h3>
+                    <div class="sel-demo-card__preview">
+                        <span class="sel-highlight">class="sel-highlight"</span>
+                        <span>No class applied</span>
+                        <span class="sel-highlight">Also highlighted</span>
+                    </div>
+                    <pre class="sel-code-block"><code>.sel-highlight {
+    background-color: #e8f5e9;
+    padding: 2px 8px;
+    border-radius: 3px;
+}</code></pre>
+                    <p class="sel-demo-card__explain">Selects all elements with <code>class="sel-highlight"</code>. Multiple elements can share the same class.</p>
+                </div>
+
+                <!-- ID selector -->
+                <div class="sel-demo-card">
+                    <h3 class="sel-demo-card__title">ID selector</h3>
+                    <div class="sel-demo-card__preview">
+                        <div id="sel-unique-box">I have <code>id="sel-unique-box"</code></div>
+                        <div>I have no ID</div>
+                    </div>
+                    <pre class="sel-code-block"><code>#sel-unique-box {
+    border: 2px solid #4caf50;
+    padding: 0.5rem;
+    border-radius: 4px;
+}</code></pre>
+                    <p class="sel-demo-card__explain">Selects the <strong>one</strong> element with that ID. IDs must be unique per page.</p>
+                </div>
+
+                <!-- Universal selector -->
+                <div class="sel-demo-card">
+                    <h3 class="sel-demo-card__title">Universal selector <code>*</code></h3>
+                    <div class="sel-demo-card__preview sel-universal-demo">
+                        <p>Paragraph</p>
+                        <span>Span</span>
+                        <strong>Strong</strong>
+                    </div>
+                    <pre class="sel-code-block"><code>.sel-universal-demo * {
+    outline: 1px dashed #bdbdbd;
+    padding: 4px;
+}</code></pre>
+                    <p class="sel-demo-card__explain">Selects <strong>every</strong> element. Scoped here to avoid page-wide effects.</p>
+                </div>
+
+                <!-- Grouping selector -->
+                <div class="sel-demo-card">
+                    <h3 class="sel-demo-card__title">Grouping selector</h3>
+                    <div class="sel-demo-card__preview sel-grouping-demo">
+                        <h4>Heading 4</h4>
+                        <h5>Heading 5</h5>
+                        <p>Paragraph</p>
+                        <span>Span (not grouped)</span>
+                    </div>
+                    <pre class="sel-code-block"><code>h4, h5, p {
+    color: #6a1b9a;
+}</code></pre>
+                    <p class="sel-demo-card__explain">Applies the <strong>same rule</strong> to multiple selectors at once, separated by commas.</p>
+                </div>
+            </div>
+
+            <aside class="demo-why">
+                <strong>Performance tip:</strong> Class selectors (<code>.class</code>) are the sweet spot between
+                specificity and reusability. Prefer them over ID selectors for styling — IDs are best reserved for
+                JavaScript hooks and anchor links.
+            </aside>
+        </section>
+
+        <!-- ================================================
+             Section 2 – Combinator Selectors
+        ================================================= -->
+        <section id="demo-combinators" class="demo-section">
+            <div class="demo-label">
+                <h2>Section 2 — Combinator Selectors</h2>
+                <p>
+                    <code>A B</code> (descendant) &nbsp;|&nbsp;
+                    <code>A &gt; B</code> (child) &nbsp;|&nbsp;
+                    <code>A + B</code> (adjacent) &nbsp;|&nbsp;
+                    <code>A ~ B</code> (general)
+                </p>
+            </div>
+
+            <p class="demo-section__note">
+                Combinators describe the <strong>relationship</strong> between two selectors.
+                Elements highlighted in <span style="background:#e3f2fd;padding:2px 6px;border-radius:3px">blue</span> are matched;
+                others are not.
+            </p>
+
+            <div class="sel-demo-grid">
+                <!-- Descendant -->
+                <div class="sel-demo-card">
+                    <h3 class="sel-demo-card__title">Descendant <code>A B</code></h3>
+                    <div class="sel-demo-card__preview sel-descendant-demo">
+                        <div class="sel-outer">
+                            <p>Direct child paragraph &#10004;</p>
+                            <section>
+                                <p>Nested deeper &#10004;</p>
+                            </section>
+                        </div>
+                        <p>Outside the div &#10008;</p>
+                    </div>
+                    <pre class="sel-code-block"><code>.sel-outer p {
+    background-color: #e3f2fd;
+}</code></pre>
+                    <p class="sel-demo-card__explain">Selects <strong>all</strong> <code>&lt;p&gt;</code> inside <code>.sel-outer</code>, at any depth.</p>
+                </div>
+
+                <!-- Child -->
+                <div class="sel-demo-card">
+                    <h3 class="sel-demo-card__title">Child <code>A &gt; B</code></h3>
+                    <div class="sel-demo-card__preview sel-child-demo">
+                        <div class="sel-outer">
+                            <p>Direct child &#10004;</p>
+                            <section>
+                                <p>Nested deeper &#10008;</p>
+                            </section>
+                        </div>
+                    </div>
+                    <pre class="sel-code-block"><code>.sel-outer > p {
+    background-color: #e3f2fd;
+}</code></pre>
+                    <p class="sel-demo-card__explain">Selects only <strong>direct children</strong>, not deeper descendants.</p>
+                </div>
+
+                <!-- Adjacent sibling -->
+                <div class="sel-demo-card">
+                    <h3 class="sel-demo-card__title">Adjacent sibling <code>A + B</code></h3>
+                    <div class="sel-demo-card__preview sel-adjacent-demo">
+                        <h4>Heading</h4>
+                        <p>First paragraph after heading &#10004;</p>
+                        <p>Second paragraph &#10008;</p>
+                        <p>Third paragraph &#10008;</p>
+                    </div>
+                    <pre class="sel-code-block"><code>h4 + p {
+    background-color: #e3f2fd;
+}</code></pre>
+                    <p class="sel-demo-card__explain">Selects only the <strong>first</strong> <code>&lt;p&gt;</code> immediately after <code>&lt;h4&gt;</code>.</p>
+                </div>
+
+                <!-- General sibling -->
+                <div class="sel-demo-card">
+                    <h3 class="sel-demo-card__title">General sibling <code>A ~ B</code></h3>
+                    <div class="sel-demo-card__preview sel-general-demo">
+                        <p>Before heading &#10008;</p>
+                        <h4>Heading</h4>
+                        <p>After heading &#10004;</p>
+                        <p>Also after heading &#10004;</p>
+                    </div>
+                    <pre class="sel-code-block"><code>h4 ~ p {
+    background-color: #e3f2fd;
+}</code></pre>
+                    <p class="sel-demo-card__explain">Selects <strong>all</strong> <code>&lt;p&gt;</code> siblings that come <strong>after</strong> <code>&lt;h4&gt;</code>.</p>
+                </div>
+            </div>
+
+            <aside class="demo-why">
+                <strong>Think of it like Java:</strong> A descendant selector is like searching all nested objects
+                recursively, while a child selector is like accessing only direct fields. The <code>&gt;</code> combinator
+                is more specific and often more performant.
+            </aside>
+        </section>
+
+        <!-- ================================================
+             Section 3 – Attribute Selectors
+        ================================================= -->
+        <section id="demo-attributes" class="demo-section">
+            <div class="demo-label">
+                <h2>Section 3 — Attribute Selectors</h2>
+                <p>
+                    <code>[attr]</code> &nbsp;|&nbsp;
+                    <code>[attr="val"]</code> &nbsp;|&nbsp;
+                    <code>[attr^="val"]</code> &nbsp;|&nbsp;
+                    <code>[attr$="val"]</code> &nbsp;|&nbsp;
+                    <code>[attr*="val"]</code>
+                </p>
+            </div>
+
+            <p class="demo-section__note">
+                Attribute selectors target elements based on the presence or value of HTML attributes.
+                They work with <strong>any</strong> attribute, including custom <code>data-*</code> attributes.
+            </p>
+
+            <div class="sel-demo-grid">
+                <!-- [attr] -->
+                <div class="sel-demo-card">
+                    <h3 class="sel-demo-card__title"><code>[data-tag]</code></h3>
+                    <div class="sel-demo-card__preview sel-attr-has-demo">
+                        <span data-tag="css">css</span>
+                        <span>no attribute</span>
+                        <span data-tag="js">js</span>
+                    </div>
+                    <pre class="sel-code-block"><code>[data-tag] {
+    border-bottom: 2px dotted #4caf50;
+}</code></pre>
+                    <p class="sel-demo-card__explain">Matches any element that <strong>has</strong> the attribute, regardless of its value.</p>
+                </div>
+
+                <!-- [attr="val"] -->
+                <div class="sel-demo-card">
+                    <h3 class="sel-demo-card__title"><code>[data-tag="css"]</code></h3>
+                    <div class="sel-demo-card__preview sel-attr-exact-demo">
+                        <span data-tag="css">css &#10004;</span>
+                        <span data-tag="css-grid">css-grid &#10008;</span>
+                        <span data-tag="js">js &#10008;</span>
+                    </div>
+                    <pre class="sel-code-block"><code>[data-tag="css"] {
+    background-color: #e8f5e9;
+}</code></pre>
+                    <p class="sel-demo-card__explain">Matches only when the attribute value is <strong>exactly</strong> <code>"css"</code>.</p>
+                </div>
+
+                <!-- [attr^="val"] -->
+                <div class="sel-demo-card">
+                    <h3 class="sel-demo-card__title"><code>[data-tag^="css"]</code></h3>
+                    <div class="sel-demo-card__preview sel-attr-start-demo">
+                        <span data-tag="css">css &#10004;</span>
+                        <span data-tag="css-grid">css-grid &#10004;</span>
+                        <span data-tag="js">js &#10008;</span>
+                    </div>
+                    <pre class="sel-code-block"><code>[data-tag^="css"] {
+    background-color: #e3f2fd;
+}</code></pre>
+                    <p class="sel-demo-card__explain">Matches when the value <strong>starts with</strong> <code>"css"</code>.</p>
+                </div>
+
+                <!-- [attr$="val"] -->
+                <div class="sel-demo-card">
+                    <h3 class="sel-demo-card__title"><code>[data-tag$="grid"]</code></h3>
+                    <div class="sel-demo-card__preview sel-attr-end-demo">
+                        <span data-tag="css-grid">css-grid &#10004;</span>
+                        <span data-tag="grid">grid &#10004;</span>
+                        <span data-tag="css">css &#10008;</span>
+                    </div>
+                    <pre class="sel-code-block"><code>[data-tag$="grid"] {
+    background-color: #f3e5f5;
+}</code></pre>
+                    <p class="sel-demo-card__explain">Matches when the value <strong>ends with</strong> <code>"grid"</code>.</p>
+                </div>
+
+                <!-- [attr*="val"] -->
+                <div class="sel-demo-card">
+                    <h3 class="sel-demo-card__title"><code>[data-tag*="script"]</code></h3>
+                    <div class="sel-demo-card__preview sel-attr-contains-demo">
+                        <span data-tag="javascript">javascript &#10004;</span>
+                        <span data-tag="typescript">typescript &#10004;</span>
+                        <span data-tag="css">css &#10008;</span>
+                    </div>
+                    <pre class="sel-code-block"><code>[data-tag*="script"] {
+    background-color: #fff3e0;
+}</code></pre>
+                    <p class="sel-demo-card__explain">Matches when the value <strong>contains</strong> the substring <code>"script"</code> anywhere.</p>
+                </div>
+            </div>
+
+            <aside class="demo-why">
+                <strong>Security note:</strong> Attribute selectors are powerful for styling, but never rely on
+                CSS to <em>enforce</em> security rules. An attacker can modify attributes via DevTools. Always
+                validate on the server side.
+            </aside>
+        </section>
+
+        <!-- ================================================
+             Section 4 – Pseudo-classes
+        ================================================= -->
+        <section id="demo-pseudo-classes" class="demo-section">
+            <div class="demo-label">
+                <h2>Section 4 — Pseudo-classes</h2>
+                <p>
+                    <code>:hover</code> &nbsp;|&nbsp;
+                    <code>:focus</code> &nbsp;|&nbsp;
+                    <code>:first-child</code> &nbsp;|&nbsp;
+                    <code>:nth-child()</code> &nbsp;|&nbsp;
+                    <code>:not()</code> &nbsp;|&nbsp;
+                    <code>:checked</code> &nbsp;|&nbsp;
+                    <code>:valid</code>
+                </p>
+            </div>
+
+            <p class="demo-section__note">
+                Pseudo-classes select elements based on their <strong>state</strong> or <strong>position</strong>
+                in the DOM tree. They use a single colon <code>:</code>.
+            </p>
+
+            <div class="sel-demo-grid">
+                <!-- :hover / :focus -->
+                <div class="sel-demo-card">
+                    <h3 class="sel-demo-card__title"><code>:hover</code> / <code>:focus</code></h3>
+                    <div class="sel-demo-card__preview">
+                        <button class="sel-hover-btn" type="button">Hover me</button>
+                        <input class="sel-focus-input fm-input" type="text" placeholder="Focus me (click or tab)">
+                    </div>
+                    <pre class="sel-code-block"><code>.sel-hover-btn:hover {
+    background-color: #388e3c;
+    transform: scale(1.05);
+}
+.sel-focus-input:focus {
+    border-color: #1565c0;
+    box-shadow: 0 0 6px rgba(21,101,192,0.4);
+}</code></pre>
+                    <p class="sel-demo-card__explain">State-based: <code>:hover</code> on mouse over, <code>:focus</code> when the element receives keyboard or click focus.</p>
+                </div>
+
+                <!-- :first-child / :last-child -->
+                <div class="sel-demo-card">
+                    <h3 class="sel-demo-card__title"><code>:first-child</code> / <code>:last-child</code></h3>
+                    <div class="sel-demo-card__preview">
+                        <ul class="sel-list-demo">
+                            <li>First item &#10004;</li>
+                            <li>Second item</li>
+                            <li>Third item</li>
+                            <li>Fourth item</li>
+                            <li>Last item &#10004;</li>
+                        </ul>
+                    </div>
+                    <pre class="sel-code-block"><code>.sel-list-demo li:first-child {
+    color: #1565c0; font-weight: bold;
+}
+.sel-list-demo li:last-child {
+    color: #6a1b9a; font-weight: bold;
+}</code></pre>
+                    <p class="sel-demo-card__explain">Position-based: selects the first or last child of its parent.</p>
+                </div>
+
+                <!-- :nth-child() -->
+                <div class="sel-demo-card">
+                    <h3 class="sel-demo-card__title"><code>:nth-child(even)</code></h3>
+                    <div class="sel-demo-card__preview">
+                        <table class="sel-striped-table">
+                            <tr><td>Row 1</td><td>Data A</td></tr>
+                            <tr><td>Row 2</td><td>Data B</td></tr>
+                            <tr><td>Row 3</td><td>Data C</td></tr>
+                            <tr><td>Row 4</td><td>Data D</td></tr>
+                            <tr><td>Row 5</td><td>Data E</td></tr>
+                            <tr><td>Row 6</td><td>Data F</td></tr>
+                        </table>
+                    </div>
+                    <pre class="sel-code-block"><code>.sel-striped-table tr:nth-child(even) {
+    background-color: #e8f5e9;
+}</code></pre>
+                    <p class="sel-demo-card__explain">Accepts formulas: <code>even</code>, <code>odd</code>, <code>3n</code>, <code>3n+1</code>, etc.</p>
+                </div>
+
+                <!-- :not() -->
+                <div class="sel-demo-card">
+                    <h3 class="sel-demo-card__title"><code>:not(.special)</code></h3>
+                    <div class="sel-demo-card__preview">
+                        <ul class="sel-not-demo">
+                            <li>Normal item (dimmed)</li>
+                            <li>Normal item (dimmed)</li>
+                            <li class="sel-special">I am .sel-special &#10004;</li>
+                            <li>Normal item (dimmed)</li>
+                        </ul>
+                    </div>
+                    <pre class="sel-code-block"><code>.sel-not-demo li:not(.sel-special) {
+    opacity: 0.4;
+}</code></pre>
+                    <p class="sel-demo-card__explain">Excludes elements matching the selector inside <code>:not()</code>.</p>
+                </div>
+
+                <!-- :checked -->
+                <div class="sel-demo-card">
+                    <h3 class="sel-demo-card__title"><code>:checked</code></h3>
+                    <div class="sel-demo-card__preview sel-checked-demo">
+                        <label class="sel-check-label">
+                            <input type="checkbox">
+                            <span>Toggle me — label changes when checked (pure CSS)</span>
+                        </label>
+                    </div>
+                    <pre class="sel-code-block"><code>input:checked + span {
+    color: #2e7d32;
+    font-weight: bold;
+}</code></pre>
+                    <p class="sel-demo-card__explain">Matches checkboxes and radios that are currently checked. Combined with <code>+</code> to style the adjacent label.</p>
+                </div>
+
+                <!-- :empty -->
+                <div class="sel-demo-card">
+                    <h3 class="sel-demo-card__title"><code>:empty</code></h3>
+                    <div class="sel-demo-card__preview sel-empty-demo">
+                        <div class="sel-empty-box"></div>
+                        <div class="sel-empty-box">I have content</div>
+                    </div>
+                    <pre class="sel-code-block"><code>.sel-empty-box:empty {
+    border: 2px dashed #bdbdbd;
+}
+.sel-empty-box:empty::after {
+    content: "(empty)";
+}</code></pre>
+                    <p class="sel-demo-card__explain">Selects elements with <strong>no children</strong> (not even text or whitespace).</p>
+                </div>
+
+                <!-- :valid / :invalid -->
+                <div class="sel-demo-card">
+                    <h3 class="sel-demo-card__title"><code>:valid</code> / <code>:invalid</code></h3>
+                    <div class="sel-demo-card__preview">
+                        <input class="sel-valid-input fm-input" type="email" placeholder="Type an email address...">
+                    </div>
+                    <pre class="sel-code-block"><code>.sel-valid-input:valid {
+    border-color: #4caf50;
+}
+.sel-valid-input:invalid {
+    border-color: #f44336;
+}</code></pre>
+                    <p class="sel-demo-card__explain">Reacts to HTML5 validation in real time — green when valid, red when invalid.</p>
+                </div>
+            </div>
+
+            <aside class="demo-why">
+                <strong>No JavaScript needed:</strong> All pseudo-class demos above work with pure CSS.
+                States like <code>:hover</code>, <code>:checked</code>, and <code>:valid</code> are managed
+                entirely by the browser. Think of them as "CSS event listeners."
+            </aside>
+        </section>
+
+        <!-- ================================================
+             Section 5 – Pseudo-elements
+        ================================================= -->
+        <section id="demo-pseudo-elements" class="demo-section">
+            <div class="demo-label">
+                <h2>Section 5 — Pseudo-elements</h2>
+                <p>
+                    <code>::before</code> &nbsp;|&nbsp;
+                    <code>::after</code> &nbsp;|&nbsp;
+                    <code>::first-letter</code> &nbsp;|&nbsp;
+                    <code>::first-line</code> &nbsp;|&nbsp;
+                    <code>::selection</code> &nbsp;|&nbsp;
+                    <code>::placeholder</code>
+                </p>
+            </div>
+
+            <p class="demo-section__note">
+                Pseudo-elements style a <strong>specific part</strong> of an element or insert generated content.
+                They use double colons <code>::</code> (single colon <code>:</code> also works for legacy support).
+            </p>
+
+            <div class="sel-demo-grid">
+                <!-- ::before / ::after -->
+                <div class="sel-demo-card">
+                    <h3 class="sel-demo-card__title"><code>::before</code> / <code>::after</code></h3>
+                    <div class="sel-demo-card__preview">
+                        <blockquote class="sel-quote">
+                            CSS pseudo-elements are powerful tools for adding decorative content without extra HTML markup.
+                        </blockquote>
+                    </div>
+                    <pre class="sel-code-block"><code>.sel-quote::before { content: "\201C"; }
+.sel-quote::after  { content: "\201D"; }</code></pre>
+                    <p class="sel-demo-card__explain">Inserts generated content before/after the element's real content. Requires the <code>content</code> property.</p>
+                </div>
+
+                <!-- ::first-letter -->
+                <div class="sel-demo-card">
+                    <h3 class="sel-demo-card__title"><code>::first-letter</code></h3>
+                    <div class="sel-demo-card__preview">
+                        <p class="sel-drop-cap">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
+                    </div>
+                    <pre class="sel-code-block"><code>.sel-drop-cap::first-letter {
+    float: left;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #4caf50;
+    line-height: 1;
+    margin-right: 0.3rem;
+}</code></pre>
+                    <p class="sel-demo-card__explain">Styles only the very first letter — useful for magazine-style drop caps.</p>
+                </div>
+
+                <!-- ::first-line -->
+                <div class="sel-demo-card">
+                    <h3 class="sel-demo-card__title"><code>::first-line</code></h3>
+                    <div class="sel-demo-card__preview">
+                        <p class="sel-first-line">The first line of this paragraph is styled differently. Resize the browser window and observe how the pseudo-element adapts dynamically to the new first line.</p>
+                    </div>
+                    <pre class="sel-code-block"><code>.sel-first-line::first-line {
+    font-weight: bold;
+    color: #1565c0;
+    text-transform: uppercase;
+}</code></pre>
+                    <p class="sel-demo-card__explain">Dynamically applies to whatever text appears on the first rendered line.</p>
+                </div>
+
+                <!-- ::selection -->
+                <div class="sel-demo-card">
+                    <h3 class="sel-demo-card__title"><code>::selection</code></h3>
+                    <div class="sel-demo-card__preview">
+                        <p class="sel-selection">Select this text with your mouse to see the custom selection colour in action. Try selecting different parts.</p>
+                    </div>
+                    <pre class="sel-code-block"><code>.sel-selection::selection {
+    background-color: #4caf50;
+    color: #fff;
+}</code></pre>
+                    <p class="sel-demo-card__explain">Styles the portion of text the user has highlighted. Only <code>color</code>, <code>background-color</code>, and a few others are supported.</p>
+                </div>
+
+                <!-- ::placeholder -->
+                <div class="sel-demo-card">
+                    <h3 class="sel-demo-card__title"><code>::placeholder</code></h3>
+                    <div class="sel-demo-card__preview">
+                        <input class="sel-placeholder-input fm-input" type="text" placeholder="I have a custom styled placeholder...">
+                    </div>
+                    <pre class="sel-code-block"><code>.sel-placeholder-input::placeholder {
+    color: #4caf50;
+    font-style: italic;
+    opacity: 0.8;
+}</code></pre>
+                    <p class="sel-demo-card__explain">Styles the placeholder text shown when the input is empty.</p>
+                </div>
+            </div>
+
+            <aside class="demo-why">
+                <strong>Important:</strong> <code>::before</code> and <code>::after</code> are <em>not</em> part
+                of the DOM — they cannot be selected by the user, copied, or accessed by screen readers reliably.
+                Use them for <strong>decorative</strong> purposes only, never for meaningful content.
+            </aside>
+        </section>
+
+        <!-- ================================================
+             Section 6 – Specificity
+        ================================================= -->
+        <section id="demo-specificity" class="demo-section">
+            <div class="demo-label">
+                <h2>Section 6 — Specificity</h2>
+                <p>
+                    <code>inline</code> &nbsp;|&nbsp;
+                    <code>#id</code> &nbsp;|&nbsp;
+                    <code>.class</code> &nbsp;|&nbsp;
+                    <code>element</code>
+                </p>
+            </div>
+
+            <p class="demo-section__note">
+                When multiple CSS rules target the same element, <strong>specificity</strong> determines which one wins.
+                It is calculated as a 4-part score: <code>(inline, ids, classes, elements)</code>.
+            </p>
+
+            <!-- Part A: Visual diagram -->
+            <div class="sel-specificity-diagram">
+                <div class="sel-spec-level sel-spec-level--inline">
+                    <span class="sel-spec-level__score">1,0,0,0</span>
+                    <span class="sel-spec-level__label">Inline styles</span>
+                </div>
+                <div class="sel-spec-level sel-spec-level--id">
+                    <span class="sel-spec-level__score">0,1,0,0</span>
+                    <span class="sel-spec-level__label">#id</span>
+                </div>
+                <div class="sel-spec-level sel-spec-level--class">
+                    <span class="sel-spec-level__score">0,0,1,0</span>
+                    <span class="sel-spec-level__label">.class / [attr] / :pseudo</span>
+                </div>
+                <div class="sel-spec-level sel-spec-level--element">
+                    <span class="sel-spec-level__score">0,0,0,1</span>
+                    <span class="sel-spec-level__label">element / ::pseudo</span>
+                </div>
+            </div>
+
+            <!-- Part B: Interactive calculator -->
+            <div class="sel-calc">
+                <label class="sel-calc__label" for="sel-calc-input">
+                    Type a CSS selector to calculate its specificity:
+                </label>
+                <input type="text" id="sel-calc-input" class="sel-calc__input fm-input" placeholder="div.active > a#link" autocomplete="off">
+                <div class="sel-calc__result">
+                    <span class="sel-calc__score" id="sel-calc-score">0, 0, 0, 0</span>
+                </div>
+                <div class="sel-calc__breakdown" id="sel-calc-breakdown"></div>
+
+                <!-- Predefined examples -->
+                <div class="sel-calc__examples">
+                    <button class="sel-calc__example" type="button" data-selector="p">p</button>
+                    <button class="sel-calc__example" type="button" data-selector=".active">.active</button>
+                    <button class="sel-calc__example" type="button" data-selector="#main">#main</button>
+                    <button class="sel-calc__example" type="button" data-selector="div.active > a#link">div.active > a#link</button>
+                    <button class="sel-calc__example" type="button" data-selector="ul li.item:first-child::before">ul li.item:first-child::before</button>
+                </div>
+            </div>
+
+            <aside class="demo-why">
+                <strong>About <code>!important</code>:</strong> This keyword overrides all specificity rules.
+                It should be avoided because it breaks the natural cascade and makes debugging extremely difficult.
+                Think of <code>!important</code> as a nuclear option — if you need it, your selector architecture
+                probably needs refactoring.
+            </aside>
+        </section>
+
+    </main>
+
+    <!-- ====================================================
+         Footer
+    ===================================================== -->
+    <footer class="page-footer">
+        <p>
+            CSS Selectors Demo &mdash; HES-SO Valais Web Development Course
+        </p>
+    </footer>
+
+    <script src="js/selectors.js"></script>
+
+</body>
+</html>

@@ -111,6 +111,17 @@
     }
 }
 
+/* ── max 740px : selectors demo grid stacks ─────────────────── */
+@media (max-width: 740px) {
+    .sel-demo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sel-specificity-diagram {
+        flex-direction: column;
+    }
+}
+
 /* ── max 540px : flex navigation stacks ─────────────────────── */
 @media (max-width: 540px) {
     .flex-nav {

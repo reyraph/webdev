@@ -449,3 +449,382 @@
 .pos-scroll-filler__spacer {
     height: 500px;
 }
+
+/* ============================================================
+   SELECTORS DEMO STYLES
+   Used by: selectors.html
+   ============================================================ */
+
+/* ── Demo card ──────────────────────────────────────────────── */
+.sel-demo-card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: 1rem 1.25rem;
+}
+
+.sel-demo-card__preview {
+    background-color: var(--color-bg-lighter);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 0.75rem 1rem;
+}
+
+/* ── Section 1: Basic selectors ─────────────────────────────── */
+
+/* Element selector demo */
+.sel-element-demo p {
+    color: var(--color-blue);
+    font-style: italic;
+}
+
+/* Class selector highlight */
+.sel-highlight {
+    background-color: var(--color-primary-bg);
+    border-radius: var(--radius-sm);
+    padding: 2px 8px;
+}
+
+/* ID selector */
+#sel-unique-box {
+    border: 2px solid var(--color-primary);
+    border-radius: var(--radius-md);
+    padding: 0.5rem;
+}
+
+/* Universal selector (scoped) */
+.sel-universal-demo * {
+    outline: 1px dashed var(--color-gray-medium);
+    padding: 4px;
+}
+
+/* Grouping selector */
+.sel-grouping-demo h4,
+.sel-grouping-demo h5,
+.sel-grouping-demo p {
+    color: var(--color-purple);
+}
+
+/* ── Section 2: Combinator selectors ────────────────────────── */
+.sel-outer {
+    background-color: var(--color-bg-code);
+    border: 1px dashed var(--color-gray-medium);
+    border-radius: var(--radius-md);
+    padding: 0.5rem;
+}
+
+/* Descendant: all <p> inside .sel-outer */
+.sel-descendant-demo .sel-outer p {
+    background-color: var(--color-blue-bg);
+    border-radius: var(--radius-sm);
+    padding: 2px 6px;
+}
+
+/* Child: only direct <p> children */
+.sel-child-demo .sel-outer > p {
+    background-color: var(--color-blue-bg);
+    border-radius: var(--radius-sm);
+    padding: 2px 6px;
+}
+
+/* Adjacent sibling: first <p> after <h4> */
+.sel-adjacent-demo h4 + p {
+    background-color: var(--color-blue-bg);
+    border-radius: var(--radius-sm);
+    padding: 2px 6px;
+}
+
+/* General sibling: all <p> after <h4> */
+.sel-general-demo h4 ~ p {
+    background-color: var(--color-blue-bg);
+    border-radius: var(--radius-sm);
+    padding: 2px 6px;
+}
+
+/* ── Section 3: Attribute selectors ─────────────────────────── */
+.sel-attr-has-demo span,
+.sel-attr-exact-demo span,
+.sel-attr-start-demo span,
+.sel-attr-end-demo span,
+.sel-attr-contains-demo span {
+    border-radius: var(--radius-md);
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    padding: 4px 10px;
+}
+
+/* [data-tag] — has the attribute */
+.sel-attr-has-demo [data-tag] {
+    border-bottom: 2px dotted var(--color-primary);
+}
+
+/* [data-tag="css"] — exact value */
+.sel-attr-exact-demo [data-tag="css"] {
+    background-color: var(--color-primary-bg);
+}
+
+/* [data-tag^="css"] — starts with */
+.sel-attr-start-demo [data-tag^="css"] {
+    background-color: var(--color-blue-bg);
+}
+
+/* [data-tag$="grid"] — ends with */
+.sel-attr-end-demo [data-tag$="grid"] {
+    background-color: var(--color-purple-bg);
+}
+
+/* [data-tag*="script"] — contains */
+.sel-attr-contains-demo [data-tag*="script"] {
+    background-color: var(--color-orange-bg);
+}
+
+/* ── Section 4: Pseudo-classes ──────────────────────────────── */
+
+/* :hover button */
+.sel-hover-btn {
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: var(--radius-md);
+    color: var(--color-white);
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 0.5rem 1.2rem;
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.sel-hover-btn:hover {
+    background-color: var(--color-primary-dark);
+    transform: scale(1.05);
+}
+
+/* :focus input */
+.sel-focus-input:focus {
+    border-color: var(--color-blue);
+    box-shadow: 0 0 6px rgba(21, 101, 192, 0.4);
+}
+
+/* :first-child / :last-child list */
+.sel-list-demo {
+    list-style: decimal;
+    padding-left: 1.5rem;
+}
+
+.sel-list-demo li {
+    padding: 0.2rem 0;
+}
+
+.sel-list-demo li:first-child {
+    color: var(--color-blue);
+    font-weight: bold;
+}
+
+.sel-list-demo li:last-child {
+    color: var(--color-purple);
+    font-weight: bold;
+}
+
+/* :nth-child table */
+.sel-striped-table {
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    width: 100%;
+}
+
+.sel-striped-table td {
+    border: 1px solid var(--color-border);
+    padding: 0.35rem 0.75rem;
+}
+
+.sel-striped-table tr:nth-child(even) {
+    background-color: var(--color-primary-bg);
+}
+
+/* :not() demo */
+.sel-not-demo {
+    list-style: none;
+    padding: 0;
+}
+
+.sel-not-demo li {
+    padding: 0.3rem 0.5rem;
+}
+
+.sel-not-demo li:not(.sel-special) {
+    opacity: 0.4;
+}
+
+.sel-special {
+    background-color: var(--color-primary-bg);
+    border-radius: var(--radius-sm);
+    font-weight: bold;
+}
+
+/* :checked demo */
+.sel-check-label {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    font-size: 0.9rem;
+    gap: 0.5rem;
+}
+
+.sel-checked-demo input:checked + span {
+    color: var(--color-primary-darker);
+    font-weight: bold;
+}
+
+/* :empty demo */
+.sel-empty-demo {
+    flex-direction: row;
+}
+
+.sel-empty-box {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    flex: 1;
+    min-height: 50px;
+    padding: 0.5rem;
+}
+
+.sel-empty-box:empty {
+    border: 2px dashed var(--color-gray-medium);
+}
+
+.sel-empty-box:empty::after {
+    color: var(--color-text-muted);
+    content: "(empty)";
+    font-size: 0.82rem;
+    font-style: italic;
+}
+
+/* :valid / :invalid */
+.sel-valid-input:valid {
+    border-color: var(--color-primary);
+}
+
+.sel-valid-input:invalid {
+    border-color: var(--color-error);
+}
+
+/* ── Section 5: Pseudo-elements ─────────────────────────────── */
+
+/* ::before / ::after quote */
+.sel-quote {
+    border-left: 3px solid var(--color-primary);
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    font-style: italic;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    position: relative;
+}
+
+.sel-quote::before {
+    color: var(--color-primary);
+    content: "\201C";
+    font-size: 2.5rem;
+    left: -0.1rem;
+    line-height: 1;
+    position: absolute;
+    top: -0.3rem;
+}
+
+.sel-quote::after {
+    color: var(--color-primary);
+    content: "\201D";
+    font-size: 1.2rem;
+}
+
+/* ::first-letter drop cap */
+.sel-drop-cap {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.sel-drop-cap::first-letter {
+    color: var(--color-primary);
+    float: left;
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 1;
+    margin-right: 0.3rem;
+}
+
+/* ::first-line */
+.sel-first-line {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.sel-first-line::first-line {
+    color: var(--color-blue);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* ::selection */
+.sel-selection {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.sel-selection::selection {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* ::placeholder */
+.sel-placeholder-input::placeholder {
+    color: var(--color-primary);
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* ── Section 6: Specificity ─────────────────────────────────── */
+
+/* Diagram levels */
+.sel-spec-level {
+    border-radius: var(--radius-lg);
+    color: var(--color-white);
+}
+
+.sel-spec-level--inline  { background-color: var(--color-red); }
+.sel-spec-level--id      { background-color: var(--color-orange); }
+.sel-spec-level--class   { background-color: var(--color-blue); }
+.sel-spec-level--element { background-color: var(--color-primary); }
+
+/* Calculator result */
+.sel-calc__result {
+    background-color: var(--color-bg-lighter);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Example buttons */
+.sel-calc__example {
+    background-color: var(--color-bg-code);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    padding: 0.35rem 0.75rem;
+    transition: background-color 0.2s;
+}
+
+.sel-calc__example:hover {
+    background-color: var(--color-primary-bg);
+    border-color: var(--color-primary);
+}

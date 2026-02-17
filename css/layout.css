@@ -487,3 +487,41 @@
 .fm-group--wide {
     grid-column: 1 / -1;
 }
+
+/* ── Selectors demo grid (selectors.html) ───────────────────── */
+.sel-demo-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 1.5rem;
+}
+
+/* ── Specificity diagram ────────────────────────────────────── */
+.sel-specificity-diagram {
+    display: flex;
+    gap: 0.75rem;
+    padding: 1.5rem;
+}
+
+.sel-spec-level {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 1rem 0.75rem;
+}
+
+/* ── Specificity calculator ─────────────────────────────────── */
+.sel-calc {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+.sel-calc__examples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
